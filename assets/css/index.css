@@ -26,3 +26,7 @@ html, body {
 .navbar, .navbar-brand, .nav-link, .offcanvas, .footer {
     color: var(--dark-green);
 }
+
+.footer-info * {
+    font-size: 14px;
+}
