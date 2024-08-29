@@ -1,3 +1,10 @@
+:root {
+    --dark-green: #155B4A;
+    --primary-green: #73D29F;
+    --gray: #707070;
+    --light-gray: #E1E1E1;
+}
+
 * {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
