@@ -5,30 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patinhas Felizes</title>
 
+    <!-- Bootstrap CSS -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="./assets/css/index.css" rel="stylesheet">
 
+    <!-- Fontes do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemon&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid aling-content-center">
+            <!-- Logo e nome do Petshop -->
             <a class="navbar-brand d-flex align-items-center gap-2 ms-2" href="#">
                 <img src="./assets/img/logo.png" alt="Logo" width="40" height="35" class="d-inline-block align-text-top"/>
                 <div class="lh-sm">
                     Patinhas<br>Felizes
                 </div>
             </a>
+            <!-- Navbar popup responsiva -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <!-- Titulo navbar popup -->
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Patinhas Felizes</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+                <!-- Nav Links -->
                 <div class="offcanvas-body justify-content-end">
                     <ul class="navbar-nav me-4 mb-2 mb-lg-0 gap-4">
                         <li class="nav-item">
@@ -49,6 +56,7 @@
         </div>
     </nav>
     
+    <!-- Script Bootstrap -->
     <script src="./assets/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
