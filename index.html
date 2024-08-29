@@ -13,32 +13,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemon&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid aling-content-center">
-            <a class="navbar-brand d-flex align-items-center gap-2 ms-5" href="#">
+            <a class="navbar-brand d-flex align-items-center gap-2 ms-2" href="#">
                 <img src="./assets/img/logo.png" alt="Logo" width="40" height="35" class="d-inline-block align-text-top"/>
                 <div class="lh-sm">
                     Patinhas<br>Felizes
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav me-4 mb-2 mb-lg-0 gap-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Serviços e Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cadastre-se</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Entrar</a>
-                    </li>
-                </ul>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Patinhas Felizes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-end">
+                    <ul class="navbar-nav me-4 mb-2 mb-lg-0 gap-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Serviços e Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cadastre-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Entrar</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>

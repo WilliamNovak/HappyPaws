@@ -15,14 +15,14 @@ html, body {
     height: 100%;
 }
 
-.navbar {
+.navbar, .offcanvas {
     background-color: var(--primary-green);
 }
 
-.navbar-brand * {
+.navbar-brand *, .offcanvas-title {
     font-family: 'Lemon', serif;
 }
 
-.navbar, .navbar-brand, .nav-link {
+.navbar, .navbar-brand, .nav-link, .offcanvas {
     color: var(--dark-green);
 }
