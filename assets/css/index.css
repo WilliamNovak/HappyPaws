@@ -15,6 +15,14 @@ html, body {
     height: 100%;
 }
 
+.navbar {
+    background-color: var(--primary-green);
+}
+
 .navbar-brand * {
     font-family: 'Lemon', serif;
+}
+
+.navbar, .navbar-brand, .nav-link {
+    color: var(--dark-green);
 }
