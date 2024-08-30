@@ -1,3 +1,15 @@
 .slogan {
     height: 30vw;
+    color: var(--dark-green);
+}
+
+.slogan * {
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+}
+
+.slogan h1 {
+    font-size: 3.6vw;
+    font-weight: 800;
+    line-height: 5vw;
 }
