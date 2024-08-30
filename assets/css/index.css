@@ -27,6 +27,6 @@ html, body {
     color: var(--dark-green);
 }
 
-.footer-info * {
+.footer-info :not(i) {
     font-size: 14px;
 }
