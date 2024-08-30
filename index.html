@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemon&display=swap" rel="stylesheet">
 </head>
+
 <body style="padding-top: 65px;">
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg bg-primary-green">
@@ -41,10 +42,10 @@
                 <div class="offcanvas-body justify-content-end">
                     <ul class="navbar-nav me-4 mb-2 mb-lg-0 gap-4">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre nós</a>
+                            <a class="nav-link" href="#sobreNos">Sobre nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Serviços e Produtos</a>
+                            <a class="nav-link" href="#servicosProdutos">Serviços e Produtos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Cadastre-se</a>
@@ -58,7 +59,7 @@
         </div>
     </nav>
 
-    <main style="min-height: 100vw;">
+    <main>
         <!-- Slogan Homepage -->
         <div class="slogan container-fluid bg-primary-green">
             <div class="row h-100">
@@ -83,8 +84,8 @@
         <!-- HomePage Body -->
          <div class="container-fluid home-body">
             <!-- Sobre Nos -->
-            <section class="row mt-5">
-                <div class="container-fluid mt-5">
+            <section id="sobreNos" class="row mt-5">
+                <div class="container-fluid mt-4">
                     <!-- Titulo secao -->
                     <div class="row d-flex justify-content-center">
                         <h2 class="text-uppercase section-title">Sobre nós</h2>
@@ -113,17 +114,39 @@
                 </div>
             </section>
             <!-- Servicos e Produtos -->
-            <section class="row mt-4">
+            <section id="servicosProdutos" class="row mt-4">
                 <div class="container-fluid">
                     <div class="row d-flex justify-content-center">
                         <h2 class="text-uppercase section-title">Serviços e produtos</h2>
                     </div>
-                    <div class="row">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col"></div>
-                                <div class="col"></div>
-                                <div class="col"></div>
+                    <div id="homeCards" class="row justify-content-center mt-5">
+                        <div class="row row-cols-3 w-75 row-cols-md-3">
+                            <div class="col">
+                                <div class="card p-3">
+                                    <div class="card-body">
+                                        <i class="card-icon fa-solid fa-shower"></i>
+                                        <h5 class="card-title mt-2">Banho e Tosa</h5>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card p-3">
+                                    <div class="card-body">
+                                        <i class="card-icon fa-solid fa-paw"></i>
+                                        <h5 class="card-title mt-2">Rações</h5>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card p-3">
+                                    <div class="card-body">
+                                        <i class="card-icon fa-solid fa-truck"></i>
+                                        <h5 class="card-title mt-2">Tele-busca</h5>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,7 +156,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer bottom-0 bg-primary-green">
+    <footer class="footer bottom-0 bg-primary-green mt-5">
         <div class="container-fluid">
             <!-- Footer Titles -->
             <div class="row justify-content-md-center align-items-center">
