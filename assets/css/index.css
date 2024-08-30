@@ -27,10 +27,6 @@ html, body {
     color: var(--dark-green);
 }
 
-.navbar {
-    z-index: 9999;
-}
-
 .footer-info :not(i) {
     font-size: 14px;
 }
