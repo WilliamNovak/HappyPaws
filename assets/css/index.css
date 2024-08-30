@@ -1,3 +1,4 @@
+/* Cores globais aplicacao */
 :root {
     --dark-green: #155B4A;
     --primary-green: #73D29F;
@@ -5,16 +6,19 @@
     --light-gray: #E1E1E1;
 }
 
+/* Fonte padrao app */
 * {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
 
+/* html e body usam 100% da tela */
 html, body {
     width: 100%;
     height: 100%;
 }
 
+/* Backgroud verde padrao */
 .bg-primary-green {
     background-color: var(--primary-green);
 }
