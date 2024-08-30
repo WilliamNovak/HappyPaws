@@ -13,3 +13,11 @@
     font-weight: 800;
     line-height: 5vw;
 }
+
+.section-title {
+    color: var(--primary-green);
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+    width: fit-content;
+}
