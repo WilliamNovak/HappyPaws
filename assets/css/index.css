@@ -31,6 +31,25 @@ html, body {
     color: var(--dark-green);
 }
 
-.footer-info :not(i) {
-    font-size: 14px;
+@media (max-width: 768px) {
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .col-4, .col-3 {
+            width: 50%;
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+    .footer-info {
+
+        .col-4, .col-3 {
+            width: 100%;
+        }
+    }
+
 }

@@ -33,8 +33,10 @@
 }
 
 .card {
-    width: 10.2em;
-    height: 10.2em;
+    width: 18vw;
+    height: 18vw;
+    min-height: 180px;
+    min-width: 180px;
 }
 
 .card-icon {
@@ -43,5 +45,33 @@
 }
 
 .card-text {
-    font-size: 1.1vw;
+    font-size: 1vw;
+}
+
+@media (max-width: 768px) {
+    .slogan-text {
+        width: 50%;
+        flex: 1 0 0%;
+        margin-left: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #homeCards .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sobreNos .col-5 {
+        margin: 0 !important;
+    }
+
+    #sobreNos .sobreNos-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
