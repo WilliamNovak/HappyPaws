@@ -27,14 +27,28 @@
             </aside>
             <main class="col-7 d-flex align-items-center">
                 <div class="container-fluid d-flex flex-column align-items-center">
-                    <h1 class="fw-bold">Criar Conta</h1>
-                    <div class="row" style="width: 60%;">
-                        <input type="text" placeholder="Usuário" name="user" class="border-0 input-field mt-3">
-                        <input type="text" placeholder="Email" name="email" class="border-0 input-field mt-3">
-                        <input type="password" placeholder="Senha" name="password" class="border-0 input-field mt-3">
-                        <input type="password" placeholder="Confirmar Senha" name="confirm-password" class="border-0 input-field mt-3">
-                    </div>
-                    <button class="rounded-button mt-4 bg-primary-green">Criar Conta</button>
+                    <h1 class="form-title">Criar Conta</h1>
+                    <form action="" class="d-flex flex-column align-items-center m-3">
+                        <div class="row w-50">
+                            <div class="input-container position-relative">
+                                <input type="text" placeholder="Usuário" name="user" class="border-0 input-field mt-3">
+                                <i class="input-icon fa-regular fa-user"></i>
+                            </div>
+                            <div class="input-container position-relative">
+                                <input type="text" placeholder="Email" name="email" class="border-0 input-field mt-3">
+                                <i class="input-icon fa-regular fa-envelope"></i>
+                            </div>
+                            <div class="input-container position-relative">
+                                <input type="password" placeholder="Senha" name="password" class="border-0 input-field mt-3">
+                                <i class="input-icon fa-solid fa-lock"></i>
+                            </div>
+                            <div class="input-container position-relative">
+                                <input type="password" placeholder="Confirmar Senha" name="confirm-password" class="border-0 input-field mt-3">
+                                <i class="input-icon fa-solid fa-lock"></i>
+                            </div>
+                        </div>
+                        <button class="rounded-button mt-4 bg-primary-green">Criar Conta</button>
+                    </form>
                 </div>
             </main>
         </div>
