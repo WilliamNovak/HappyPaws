@@ -18,6 +18,18 @@ html, body {
     height: 100%;
 }
 
+aside {
+    color: white;
+}
+
+aside * {
+    width: fit-content;
+
+    :not(h1) {
+        font-size: 1.5rem;
+    }
+}
+
 /* Backgroud verde padrao */
 .bg-primary-green {
     background-color: var(--primary-green);
@@ -29,6 +41,17 @@ html, body {
 
 .navbar, .navbar-brand, .nav-link, .offcanvas, .footer {
     color: var(--dark-green);
+}
+
+.rounded-button {
+    border-radius: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 1rem;
+    width: 40%;
 }
 
 @media (max-width: 768px) {
