@@ -53,6 +53,10 @@ aside * {
     width: 40%;
 }
 
+.rounded-button:hover {
+    scale: 1.05;
+}
+
 .form-title {
     color: var(--primary-green);
     font-weight: 800;
@@ -71,6 +75,14 @@ aside * {
     width: 100%;
     height: 3.6rem;
     padding-left: 4rem;
+}
+
+.input-field:focus {
+    border-color: var(--dark-green);
+}
+
+.input-field:hover {
+    scale: 1.01;
 }
 
 .input-icon {
