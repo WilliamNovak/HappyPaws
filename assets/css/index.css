@@ -47,6 +47,10 @@ aside * {
     font-size: 18px;
 }
 
+.dropdown-item:active {
+    background-color: var(--primary-green);
+}
+
 .circle {
     width: 2.2rem;
     height: 2.2rem;
