@@ -3,7 +3,7 @@
     --dark-green: rgb(21, 91, 74);
     --primary-green: rgb(115, 210, 159);
     --gray: rgb(112, 112, 112);
-    --light-gray: rgb(225, 225, 225, 0.5);
+    --light-gray: rgba(225, 225, 225, 0.5);
 }
 
 /* Fonte padrao app */
@@ -60,7 +60,21 @@ aside * {
 .form-title {
     color: var(--primary-green);
     font-weight: 800;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.form-floating > label {
+    left: auto;
+    color: var(--gray);
+}
+
+.form-floating > label::after {
+    background-color: transparent !important;
+}
+
+.input-fieldset {
+    border: 1px solid var(--light-gray);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
 }
 
 .input-container * {
@@ -72,17 +86,17 @@ aside * {
 .input-field {
     background-color: var(--light-gray);
     border-radius: 0.5rem;
+    color: var(--gray);
     width: 100%;
     height: 3.6rem;
     padding-left: 4rem;
 }
 
 .input-field:focus {
-    border-color: var(--dark-green);
-}
-
-.input-field:hover {
-    scale: 1.01;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(225, 225, 225, 0.65);
+    border-color: var(--gray);
+    color: var(--gray);
 }
 
 .input-icon {
