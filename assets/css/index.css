@@ -39,8 +39,25 @@ aside * {
     font-family: 'Lemon', serif;
 }
 
-.navbar, .navbar-brand, .nav-link, .offcanvas, .footer {
+.navbar, .navbar-brand, .nav-link, .offcanvas, .footer, .nav-item .dropdown-item {
     color: var(--dark-green);
+}
+
+.nav-link .fa-cart-shopping {
+    font-size: 18px;
+}
+
+.circle {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: var(--dark-green);
+    color: white;
+    text-align: center;
+    
+    span {
+        font-size: 14px;
+    }
 }
 
 .rounded-button {
