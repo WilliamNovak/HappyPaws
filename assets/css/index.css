@@ -78,7 +78,7 @@ aside * {
     scale: 1.05;
 }
 
-.form-title {
+.form-title, .region-title {
     color: var(--primary-green);
     font-weight: 800;
 }
