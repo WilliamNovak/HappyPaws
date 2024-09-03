@@ -81,7 +81,7 @@
         <!-- Titulo e botao de adicionar -->
         <div class="d-grid d-md-flex justify-content-md-between mt-5">
             <h3 class="region-title">Seus Pets</h3>
-            <button class="btn btn-success btn-sm px-3">
+            <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#modalPet">
                 <i class="fa-solid fa-plus me-2"></i>
                 <span>Novo Pet</span>
             </button>
@@ -113,7 +113,7 @@
                     <td class="align-middle">Pequeno</td>
                     <!-- Acoes de editar ou excluir pet -->
                     <td class="align-middle">
-                        <button type="button" class="btn btn-outline-primary btn-sm me-1">
+                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet">
                             <i class="fa-regular fa-pen-to-square me-1"></i>
                             <span>Editar</span>
                         </button>
@@ -135,7 +135,7 @@
                     <td class="align-middle">Grande</td>
                     <!-- Acoes de editar ou excluir pet -->
                     <td class="align-middle">
-                        <button type="button" class="btn btn-outline-primary btn-sm me-1">
+                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet">
                             <i class="fa-regular fa-pen-to-square me-1"></i>
                             <span>Editar</span>
                         </button>
@@ -157,7 +157,7 @@
                     <td class="align-middle">Pequeno</td>
                     <!-- Acoes de editar ou excluir pet -->
                     <td class="align-middle">
-                        <button type="button" class="btn btn-outline-primary btn-sm me-1">
+                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet">
                             <i class="fa-regular fa-pen-to-square me-1"></i>
                             <span>Editar</span>
                         </button>
@@ -170,6 +170,85 @@
             </tbody>
         </table>
     </main>
+
+    <div class="modal fade" id="modalPet" tabindex="-1" aria-labelledby="modalPetLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPetLabel">Cadastro de Pet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="container-fluid my-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="petImage" class="input-field rounded-5 h-100 text-center p-0" role="button">
+                                        <span class="position-absolute top-50 translate-middle">Imagem</span>
+                                    </label>
+                                    <input type="file" class="d-none" id="petImage">
+                                </div>
+                                <div class="col-8">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-6 form-floating">
+                                                <input type="text" class="form-control input-field" placeholder="Nome" id="petName" name="petName">
+                                                <label for="petName" class="fw-light">Nome</label>
+                                            </div>
+                                            <div class="col-6 form-floating">
+                                                <input type="text" class="form-control input-field" placeholder="Tipo" id="petType" name="petType">
+                                                <label for="petType" class="fw-light">Tipo</label>
+                                            </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-6 form-floating">
+                                                <input type="text" class="form-control input-field" placeholder="Raça" id="petBreed" name="petBreed">
+                                                <label for="petBreed" class="fw-light">Raça</label>
+                                            </div>
+                                            <div class="col-6 form-floating">
+                                                <input type="text" class="form-control input-field" placeholder="Temperamento" id="petTemper" name="petTemper">
+                                                <label for="petTemper" class="fw-light">Temperamento</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 form-floating">
+                                                <input type="number" class="form-control input-field" placeholder="Idade" id="petAge" name="petAge">
+                                                <label for="petAge" class="fw-light">Idade</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-check-label">Porte</label>
+                                                <div class="d-flex">
+                                                    <div class="form-check w-50">
+                                                        <input class="form-check-input" type="radio" name="petSize" id="petSizeSmall" value="small" checked>
+                                                        <label class="form-check-label" for="petSizeSmall">
+                                                            Pequeno
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check w-50">
+                                                        <input class="form-check-input" type="radio" name="petSize" id="petSizeLarge" value="large">
+                                                        <label class="form-check-label" for="petSizeLarge">
+                                                            Grande
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" type="submit" class="btn btn-success">
+                        <i class="fa-regular fa-floppy-disk me-1"></i>
+                        <span>Salvar Alterações</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer bottom-0 bg-primary-green mt-5">
