@@ -171,23 +171,29 @@
         </table>
     </main>
 
+    <!-- Modal de cadastro de Pet -->
     <div class="modal fade" id="modalPet" tabindex="-1" aria-labelledby="modalPetLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
+                <!-- Header da modal -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalPetLabel">Cadastro de Pet</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- Corpo da modal -->
                 <div class="modal-body">
+                    <!-- Formulario de cadastro -->
                     <form action="">
                         <div class="container-fluid my-4">
                             <div class="row">
+                                <!-- Seletor de imagem do pet -->
                                 <div class="col-4">
                                     <label for="petImage" class="input-field rounded-5 h-100 text-center p-0" role="button">
                                         <span class="position-absolute top-50 translate-middle">Imagem</span>
                                     </label>
                                     <input type="file" class="d-none" id="petImage">
                                 </div>
+                                <!-- Campos de cadastro -->
                                 <div class="col-8">
                                     <div class="container-fluid">
                                         <div class="row">
@@ -239,6 +245,7 @@
                         </div>
                     </form>
                 </div>
+                <!-- Footer da modal com botoes -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="button" type="submit" class="btn btn-success">
@@ -250,17 +257,20 @@
         </div>
     </div>
 
+    <!-- Modal de confirmacao de exclusao de pet -->
     <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-      
+                <!-- Header da modal -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="confirmModalLabel">Confirmar Exclusão</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- Corpo da modal -->
                 <div class="modal-body">
-                Tem certeza que deseja excluir este pet?<br>Esta ação não pode ser desfeita.
+                    Tem certeza que deseja excluir este pet?<br>Esta ação não pode ser desfeita.
                 </div>
+                <!-- Footer da modal com botoes -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-danger">
