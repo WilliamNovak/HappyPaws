@@ -81,7 +81,7 @@
         <!-- Titulo e botao de adicionar -->
         <div class="d-grid d-md-flex justify-content-md-between mt-5">
             <h3 class="region-title">Seus Pets</h3>
-            <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#modalPet">
+            <button class="btn btn-success btn-sm px-3" data-bs-toggle="modal" data-bs-target="#modalPet" data-action="add">
                 <i class="fa-solid fa-plus me-2"></i>
                 <span>Novo Pet</span>
             </button>
@@ -113,7 +113,7 @@
                     <td class="align-middle">Pequeno</td>
                     <!-- Acoes de editar ou excluir pet -->
                     <td class="align-middle">
-                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet">
+                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet" data-action="edit">
                             <i class="fa-regular fa-pen-to-square me-1"></i>
                             <span>Editar</span>
                         </button>
@@ -135,7 +135,7 @@
                     <td class="align-middle">Grande</td>
                     <!-- Acoes de editar ou excluir pet -->
                     <td class="align-middle">
-                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet">
+                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet" data-action="edit">
                             <i class="fa-regular fa-pen-to-square me-1"></i>
                             <span>Editar</span>
                         </button>
@@ -157,7 +157,7 @@
                     <td class="align-middle">Pequeno</td>
                     <!-- Acoes de editar ou excluir pet -->
                     <td class="align-middle">
-                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet">
+                        <button type="button" class="btn btn-outline-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#modalPet" data-action="edit">
                             <i class="fa-regular fa-pen-to-square me-1"></i>
                             <span>Editar</span>
                         </button>
@@ -248,7 +248,11 @@
                 <!-- Footer da modal com botoes -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" type="submit" class="btn btn-success">
+                    <button id="addButton" type="submit" type="submit" class="btn btn-success">
+                        <i class="fa-regular fa-plus me-1"></i>
+                        <span>Incluir Pet</span>
+                    </button>
+                    <button id="saveButton" type="submit" type="submit" class="btn btn-success">
                         <i class="fa-regular fa-floppy-disk me-1"></i>
                         <span>Salvar Alterações</span>
                     </button>
@@ -360,5 +364,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Script Fontawesome -->
     <script src="https://kit.fontawesome.com/d974cc6bff.js" crossorigin="anonymous"></script>
+    <!-- Script jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Javascript Aplicacao -->
+     <script src="./assets/js/app.js"></script>
 </body>
 </html>
