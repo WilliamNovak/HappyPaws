@@ -9,3 +9,19 @@
         color: var(--primary-green);
     }
 }
+
+.card {
+    max-width: 50vw;
+    max-height: 50vh;
+}
+
+.card-img {
+    max-height: 90%;
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 40vw;
+    }
+
+}

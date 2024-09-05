@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemon&display=swap" rel="stylesheet">
 </head>
-<body style="padding-top: 65px;">
+<body class="min-vh-100">
 
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg bg-primary-green">
@@ -78,9 +78,9 @@
         </div>
     </nav>
 
-    <main class="container-fluid mt-4" style="height: calc(100% - 65px)">
+    <main class="container-fluid mt-4 vh-100 position-relative" style="padding-top: 65px;">
         <div class="row">
-            <ul class="nav nav-underline justify-content-center" id="pageTabs" role="tablist">
+            <ul class="nav nav-underline justify-content-center p-0" id="pageTabs" role="tablist">
                 <li class="nav-item me-4" role="tabs">
                     <button class="nav-link active" id="productTab" data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="true">Produtos</button>
                 </li>
@@ -90,23 +90,25 @@
             </ul>
         </div>
 
-        <div class="tab-content h-75 p-5 d-flex align-items-center" id="tabContents">
-            <div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="productTab">tab 1</div>
-            <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="serviceTab">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-5 d-flex justify-content-center">
-                        <div class="card rounded-4 w-75">
-                            <img src="./assets/img/dog_shower.jpg" class="card-img-top img-fluid rounded-top-5" alt="Imagem de um cachorro tomando banho">
-                            <div class="text-center">
-                                <h4 class="fw-bolder">Banho</h4>
+        <div class="d-flex align-items-center justify-content-center h-75">
+            <div class="tab-content p-5 d-flex align-items-center justify-content-center" id="tabContents">
+                <div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="productTab">tab 1</div>
+                <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="serviceTab">
+                    <div class="row justify-content-md-center gap-4">
+                        <div class="col-md-5 col-lg-4 d-flex justify-content-center">
+                            <div class="card rounded-4">
+                                <img src="./assets/img/dog_shower.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro tomando banho">
+                                <div class="text-center">
+                                    <h4 class="fw-bolder">Banho</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-5 d-flex justify-content-center">
-                        <div class="card rounded-4 w-75">
-                            <img src="./assets/img/dog_grommig.jpg" class="card-img-top img-fluid rounded-top-5" alt="Imagem de um cachorro sendo tosado">
-                            <div class="text-center">
-                                <h4 class="fw-bolder">Tosa</h4>
+                        <div class="col-md-5 col-lg-4 d-flex justify-content-center">
+                            <div class="card rounded-4">
+                                <img src="./assets/img/dog_grommig.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro sendo tosado">
+                                <div class="text-center">
+                                    <h4 class="fw-bolder">Tosa</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,7 +118,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer bottom-0 bg-primary-green mt-5">
+    <footer class="footer bottom-0 bg-primary-green">
         <div class="container-fluid">
             <!-- Footer infos -->
             <div class="footer-info row justify-content-md-center">
