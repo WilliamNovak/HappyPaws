@@ -39,7 +39,7 @@ aside * {
     font-family: 'Lemon', serif;
 }
 
-.navbar, .navbar-brand, .nav-link, .offcanvas, .footer, .nav-item .dropdown-item {
+.navbar, .navbar-brand, .navbar-brand:hover, .nav-link, .offcanvas, .footer, .nav-item .dropdown-item {
     color: var(--dark-green);
 }
 
