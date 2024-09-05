@@ -25,6 +25,11 @@ main {
     }
 }
 
+.modal-body {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
 @media (max-width: 480px) {
     main {
         .card {

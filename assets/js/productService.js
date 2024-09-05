@@ -2,6 +2,7 @@
 const petsData = [
     { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" },
     { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" },
+    { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" },
     { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" }
 ];
 
