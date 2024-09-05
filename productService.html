@@ -97,22 +97,22 @@
                     <div class="row justify-content-md-center gap-4">
                         <div class="col-md-5 col-lg-4 d-flex justify-content-center">
                             <div class="card rounded-4">
-                                <a href="" class="text-decoration-none text-black h-100 w-100">
+                                <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal">
                                     <img src="./assets/img/dog_shower.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro tomando banho">
                                     <div class="text-center">
                                         <h4 class="fw-bolder">Banho</h4>
                                     </div>
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="col-md-5 col-lg-4 d-flex justify-content-center">
                             <div class="card rounded-4">
-                                <a href="" class="text-decoration-none text-black h-100 w-100">
+                                <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal">
                                     <img src="./assets/img/dog_grommig.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro sendo tosado">
                                     <div class="text-center">
                                         <h4 class="fw-bolder">Tosa</h4>
                                     </div>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -120,6 +120,57 @@
             </div>
         </div>
     </main>
+
+    <!-- Modal Contratar Servico -->
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Header da modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModalLabel">Contratar Serviço</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Corpo da modal -->
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <input type="checkbox" name="serviceCheck" class="m-4">
+                                        <img src="./assets/img/dog_shower.jpg" class="img-fluid rounded-start" alt="Imagem de um cachorro tomando banho" width="150">
+                                    </div>
+                                    <div class="col-md-4 d-md-flex align-items-md-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nome do Pet</h5>
+                                            <p class="card-text">Raça: Golden Retriever</p>
+                                            <p class="card-text"><small class="text-muted">Idade: 2 anos - Porte: P</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 d-md-flex align-items-md-center">
+                                        <div class="card-body">
+                                            <p class="card-text">Valor: <span>R$50,00</span></p>
+                                            <button type="button" class="btn btn-primary">Agendar Banho</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer da modal com botoes -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button id="cartButton" type="submit" class="btn btn-outline-success">
+                        <span>Adicionar ao Carrinho</span>
+                    </button>
+                    <button id="contractButton" type="submit" class="btn btn-success">
+                        <span>Contratar Serviços</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer bottom-0 bg-primary-green">
