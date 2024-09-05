@@ -19,6 +19,10 @@
     max-height: 90%;
 }
 
+.card:hover {
+    transform: scale(1.02);
+}
+
 @media (max-width: 480px) {
     .card {
         max-width: 40vw;
