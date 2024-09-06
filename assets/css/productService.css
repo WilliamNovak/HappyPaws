@@ -12,27 +12,44 @@
 
 .productTab {
     .card {
-        max-width: 50vw;
-        max-height: 50vh;
+        max-width: 20vw;
+        max-height: 60vh;
     }
 
     .card-img {
-        max-height: 90%;
+        height: 76%;
         max-width: 100%;
     }
 
     .card-footer {
-        height: 100%;
-        transition: max-height 0.3s ease-in-out;
+        height: 24%;
         overflow: hidden;
+    }
+
+    .card-title * {
+        color: var(--dark-green);
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .card-text-hidden p {
+        color: var(--gray);
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .card-buttons {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
     
     .card.expanded {
 
         .card-footer {
             position: absolute;
-            height: 50%;
-            top: 50%;
+            height: 60%;
+            top: 40%;
             left: 0;
             right: 0;
             background-color: white;
