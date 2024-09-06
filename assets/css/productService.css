@@ -27,13 +27,20 @@
         overflow: hidden;
     }
     
-    .card-footer.expanded {
-        position: absolute;
-        height: 50%;
-        top: 50%;
-        left: 0;
-        right: 0;
-        background-color: white;
+    .card.expanded {
+
+        .card-footer {
+            position: absolute;
+            height: 50%;
+            top: 50%;
+            left: 0;
+            right: 0;
+            background-color: white;
+        }
+
+        .card-img {
+            filter: brightness(0.85);
+        }
     }
 }
 

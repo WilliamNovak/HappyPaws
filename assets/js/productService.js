@@ -82,14 +82,15 @@ const generatePetCards = (data, service) => {
 
 // Funcao que controla a regiao da descricao dos cards de produtos
 const showHideCardDescription = (btn) => {
-    // Seleciona o elemento com classe card-footer mais proximo
-    const cardFooter = btn.closest(".card-footer");
+    // Seleciona o elemento com classe card mais proximo
+    const card       = btn.closest('.card')
+        , cardFooter = card.querySelector('.card-footer');;
     // Adiciona ou remove a classe expanded
-    cardFooter.classList.toggle("expanded");
+    card.classList.toggle('expanded');
 
     // Altera o display do elemento da classe card-text-hidden
-    const cardTextHidden = cardFooter.querySelector(".card-text-hidden");
-    cardTextHidden.style.display = cardTextHidden.style.display === "none" ? "block" : "none";
+    const cardTextHidden = cardFooter.querySelector('.card-text-hidden');
+    cardTextHidden.style.display = cardTextHidden.style.display === 'none' ? 'block' : 'none';
 };
 
 // Executa ao carregar pagina
