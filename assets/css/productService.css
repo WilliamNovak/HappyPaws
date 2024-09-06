@@ -13,7 +13,7 @@
 .productTab {
     .card {
         max-width: 20vw;
-        max-height: 60vh;
+        height: 25rem;
     }
 
     .card-img {
