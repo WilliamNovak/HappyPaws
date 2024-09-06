@@ -10,7 +10,34 @@
     }
 }
 
-main {
+.productTab {
+    .card {
+        max-width: 50vw;
+        max-height: 50vh;
+    }
+
+    .card-img {
+        max-height: 90%;
+        max-width: 100%;
+    }
+
+    .card-footer {
+        height: 100%;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    
+    .card-footer.expanded {
+        position: absolute;
+        height: 50%;
+        top: 50%;
+        left: 0;
+        right: 0;
+        background-color: white;
+    }
+}
+
+.serviceTab {
     .card {
         max-width: 50vw;
         max-height: 50vh;
@@ -35,5 +62,9 @@ main {
         .card {
             max-width: 40vw;
         }
+    }
+
+    .tab-content  {
+        padding-top: 20vw;
     }
 }

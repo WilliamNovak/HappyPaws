@@ -80,6 +80,18 @@ const generatePetCards = (data, service) => {
     });
 }
 
+// Funcao que controla a regiao da descricao dos cards de produtos
+const showHideCardDescription = (btn) => {
+    // Seleciona o elemento com classe card-footer mais proximo
+    const cardFooter = btn.closest(".card-footer");
+    // Adiciona ou remove a classe expanded
+    cardFooter.classList.toggle("expanded");
+
+    // Altera o display do elemento da classe card-text-hidden
+    const cardTextHidden = cardFooter.querySelector(".card-text-hidden");
+    cardTextHidden.style.display = cardTextHidden.style.display === "none" ? "block" : "none";
+};
+
 // Executa ao carregar pagina
 $(document).ready(function() {
     // Pega os parametros da url
