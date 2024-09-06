@@ -88,6 +88,11 @@ const showHideCardDescription = (btn) => {
     // Adiciona ou remove a classe expanded
     card.classList.toggle('expanded');
 
+    // Alteracao icone do botao
+    const icon = btn.querySelector('i');
+    icon.classList.toggle('fa-plus');
+    icon.classList.toggle('fa-minus');
+
     // Altera o display do elemento da classe card-text-hidden
     const cardTextHidden = cardFooter.querySelector('.card-text-hidden');
     cardTextHidden.style.display = cardTextHidden.style.display === 'none' ? 'block' : 'none';
