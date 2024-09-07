@@ -73,7 +73,7 @@ const generatePetCards = (data, service) => {
 }
 
 // Cria um novo card de produto
-function createProductCard(productData) {
+const createProductCard = (productData) => {
     // Cria os elementos HTML
     const card = document.createElement('div');
     card.classList.add('col', 'd-flex', 'justify-content-center', 'm-0');
@@ -103,11 +103,15 @@ function createProductCard(productData) {
     const cardButton = document.createElement('button');
     cardButton.classList.add('col-2', 'btn');
     cardButton.type = 'button';
-    cardButton.onclick = 'showHideCardDescription(this)';
-    cardButton.appendChild('<i class="fa-solid fa-plus"></i>');
+
+    cardButton.onclick = function() {
+        showHideCardDescription(this);
+    };
+    
+    cardButton.innerHTML = '<i class="fa-solid fa-plus"></i>';
 
     // Adiciona os elementos do titulo
-    cardTitle.appendChild(h5);
+    cardTitle.innerHTML += h5;
     cardTitle.appendChild(cardButton);
   
     // Cria a descricao do card
@@ -121,11 +125,11 @@ function createProductCard(productData) {
     const btnBuy = '<button type="button" class="btn btn-success rounded-3">Comprar</button>';
     const btnCart = '<button type="button" class="btn btn-outline-success rounded-3"><i class="fa-solid fa-cart-shopping"></i></button>';
     // Adiciona os botoes de acoes
-    cardActions.appendChild(btnBuy);
-    cardActions.appendChild(btnCart);
+    cardActions.innerHTML += (btnBuy);
+    cardActions.innerHTML += (btnCart);
 
     // Adiciona os elementos na description do card
-    cardDescription.appendChild(`<p class="card-text m-0">${productData.description}</p>`);
+    cardDescription.innerHTML += `<p class="card-text m-0">${productData.description}</p>`;
     cardDescription.appendChild(cardActions);
 
     // Adiciona os elementos no footer do card
@@ -133,7 +137,7 @@ function createProductCard(productData) {
     cardFooter.appendChild(cardDescription);
   
     // Adiciona os elementos filhos ao card
-    cardElement.appendChild(cardPrice);
+    cardElement.innerHTML += cardPrice;
     cardElement.appendChild(image);
     cardElement.appendChild(cardFooter);
   
@@ -141,6 +145,48 @@ function createProductCard(productData) {
   
     // Retorna o card criado
     return card;
+}
+
+// Gera os cards de produtos na tela
+const generateProductCards = (productArray) => {
+    const productContainer = document.getElementById('products');
+    productContainer.innerHTML = ''; // Limpa linhas existentes
+
+    // Verifica tamanho da tela e quantidade de cards por slide
+    const screenWidth   = window.screen.width
+        , cardsPerSlide = screenWidth <= 480 ? 1 : 4
+        , totalSlides   = productArray.length / cardsPerSlide;
+
+    // Cria e adiciona os slides de produtos
+    for (let i = 1; i <= totalSlides; i++) {
+        // Cria o slide
+        const slide = document.createElement('div');
+        slide.classList.add('carousel-item');
+        
+        // Seta o primeiro como ativo
+        if (i === 1) {
+            slide.classList.add('active');
+        }
+        // Cria a linha de cards
+        const row = document.createElement('div');
+        row.classList.add('row', 'row-cols-1', `row-cols-md-${cardsPerSlide}`, 'g-4', 'mt-1');
+
+        // Verifica cards por slide
+        const final   = (cardsPerSlide * i)
+            , initial = final - cardsPerSlide;
+        
+        // Chama funcao que cria o card e adiciona os cards no array
+        for (let p = initial; p < final; p++) {
+            card = createProductCard(productArray[p]);
+            row.appendChild(card);
+        }
+
+        // Adiciona a linha no slide
+        slide.appendChild(row);
+
+        // Adiciona o slide na div de produtos
+        productContainer.appendChild(slide);
+    }
 }
 
 // Funcao que controla a regiao da descricao dos cards de produtos
@@ -172,6 +218,8 @@ $(document).ready(function() {
     if (tab) {
         document.getElementById(tab).click();
     };
+
+    generateProductCards(productsData)
 
     // Executa ao abrir a modal
     $('#serviceModal').on('show.bs.modal', function (event) {

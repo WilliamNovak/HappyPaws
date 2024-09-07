@@ -30,7 +30,7 @@ const petsData = [
 ];
 
 // Array com dados dos produtos
-const products = [
+const productsData = [
     { 
         title: "Ração úmida para cães de pequeno porte",
         description: "Ração ideal para cães filhotes de pequeno porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
@@ -63,7 +63,7 @@ const products = [
         title: "Ração úmida para gatos de pequeno porte",
         description: "Ração ideal para gatos filhotes de pequeno porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$35,90",
-        image: "./assets/img/wet_cat_food.jpg",
+        image: "./assets/img/wet_cat_food.png",
         altText: "Imagem de pacote de ração úmida para gatos de pequeno porte"
     },
     { 
