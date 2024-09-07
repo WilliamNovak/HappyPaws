@@ -16,6 +16,22 @@
         height: 25rem;
     }
 
+    .card-price {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: white;
+        border: 1px;
+        border-top: 0;
+        border-right: 0;
+        border-style: solid;
+        border-color:  rgb(215, 215, 215);
+        border-radius: 0 var(--bs-border-radius-xl) 0 var(--bs-border-radius-lg);
+        color: #198754;
+        font-weight: 800;
+        z-index: 1;
+    }
+
     .card-img {
         height: 76%;
         max-width: 100%;
