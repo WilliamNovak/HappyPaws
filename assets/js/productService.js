@@ -1,3 +1,16 @@
+let interval = ''
+
+// Passa slide de produto
+function nextSlide() {
+    $('#productCarousel').carousel('next');
+}
+
+// Ativa intervalo para passar slides
+function activeInterval() {
+    timer = window.screen.width <= 480 ? 5000 : 10000;
+    interval = setInterval(nextSlide, timer);
+}
+
 // Gera cards de pets para servico dinamicamente
 const generatePetCards = (data, service) => {
     
@@ -86,7 +99,7 @@ const createProductCard = (productData) => {
   
     // Cria a imagem do card
     const image = document.createElement('img');
-    image.classList.add('card-img-top', 'card-img', 'rounded-top-4');
+    image.classList.add('card-img-top', 'card-img', 'rounded-4');
     image.src = productData.image;
     image.alt = productData.altText;
 
@@ -202,6 +215,9 @@ const showHideCardDescription = (btn) => {
     icon.classList.toggle('fa-plus');
     icon.classList.toggle('fa-minus');
 
+    // Limpa o intervalo de tempo do slide
+    clearInterval(interval);
+
     // Altera o display do elemento da classe card-text-hidden
     const cardTextHidden = cardFooter.querySelector('.card-text-hidden');
     cardTextHidden.style.display = cardTextHidden.style.display === 'none' ? 'block' : 'none';
@@ -231,4 +247,6 @@ $(document).ready(function() {
         // Chama a funcao que adiciona as linhas dos pets
         generatePetCards(petsData, service);
     });
+
+    activeInterval();
 })
