@@ -79,63 +79,61 @@
     </nav>
 
     <main class="container-fluid mt-4 vh-100 position-relative d-flex justify-content-center" style="padding-top: 65px;">
-        <div >
-        <div class="row">
-            <ul class="nav nav-underline justify-content-center p-0" id="pageTabs" role="tablist">
-                <li class="nav-item me-4" role="tabs">
-                    <button class="nav-link active" id="productTab" data-bs-toggle="tab" data-bs-target="#productsTab" type="button" role="tab" aria-controls="productsTab" aria-selected="true">Produtos</button>
-                </li>
-                <li class="nav-item" role="tabs">
-                    <button class="nav-link" id="serviceTab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false">Serviços</button>
-                </li>
-            </ul>
-        </div>
+        <div class="w-100">
+            <div class="row">
+                <ul class="nav nav-underline justify-content-center p-0" id="pageTabs" role="tablist">
+                    <li class="nav-item pe-2" role="tabs">
+                        <button class="nav-link active" id="productTab" data-bs-toggle="tab" data-bs-target="#productsTab" type="button" role="tab" aria-controls="productsTab" aria-selected="true">Produtos</button>
+                    </li>
+                    <li class="nav-item ps-2" role="tabs">
+                        <button class="nav-link" id="serviceTab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false">Serviços</button>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="d-flex align-items-center justify-content-center h-75">
-            <div class="tab-content d-flex align-items-center justify-content-center w-100" id="tabContents">
-                <!-- Tab de Produtos -->
-                <div class="tab-pane fade show active productTab h-100 w-100 mt-3" id="productsTab" role="tabpanel" aria-labelledby="productTab">
-                    <!-- Div com os cards dos produtos -->
-                    <div id="productCarousel" class="carousel slide row" data-bs-theme="dark">
-                        <button class="carousel-button col-1" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <div id="products" class="col-10 px-0" data-bs-theme="light">
-                        </div>
-                        <button class="carousel-button col-1" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <!-- Tab de Servicos -->
-                <div class="tab-pane fade serviceTab" id="services" role="tabpanel" aria-labelledby="serviceTab">
-                    <div class="row justify-content-md-center gap-4">
-                        <div class="col-md-5 col-lg-4 d-flex justify-content-center">
-                            <div class="card rounded-4">
-                                <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="Banho">
-                                    <img src="./assets/img/dog_shower.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro tomando banho">
-                                    <div class="text-center">
-                                        <h4 class="fw-bolder">Banho</h4>
-                                    </div>
-                                </button>
+            <div class="d-flex align-items-center justify-content-center h-75">
+                <div class="tab-content d-flex align-items-center justify-content-center w-100" id="tabContents">
+                    <!-- Tab de Produtos -->
+                    <div class="tab-pane fade show active productTab h-100 w-100 mt-3" id="productsTab" role="tabpanel" aria-labelledby="productTab">
+                        <!-- Div com os cards dos produtos -->
+                        <div id="productCarousel" class="carousel slide row" data-bs-theme="dark">
+                            <button class="carousel-button col-1 pe-0" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <div id="products" class="col-10 px-0" data-bs-theme="light">
                             </div>
+                            <button class="carousel-button col-1 ps-0" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
                         </div>
-                        <div class="col-md-5 col-lg-4 d-flex justify-content-center">
-                            <div class="card rounded-4">
-                                <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="Tosa">
-                                    <img src="./assets/img/dog_grommig.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro sendo tosado">
-                                    <div class="text-center">
-                                        <h4 class="fw-bolder">Tosa</h4>
-                                    </div>
-                                </button>
+                    </div>
+                    <!-- Tab de Servicos -->
+                    <div class="tab-pane fade serviceTab" id="services" role="tabpanel" aria-labelledby="serviceTab">
+                        <div class="row justify-content-md-center gap-4">
+                            <div class="col-md-5 col-lg-4 d-flex justify-content-center">
+                                <div class="card rounded-4">
+                                    <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="Banho">
+                                        <img src="./assets/img/dog_shower.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro tomando banho">
+                                        <div class="text-center">
+                                            <h4 class="fw-bolder">Banho</h4>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-lg-4 d-flex justify-content-center">
+                                <div class="card rounded-4">
+                                    <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="Tosa">
+                                        <img src="./assets/img/dog_grommig.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro sendo tosado">
+                                        <div class="text-center">
+                                            <h4 class="fw-bolder">Tosa</h4>
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </main>
 

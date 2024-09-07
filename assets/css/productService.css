@@ -12,7 +12,7 @@
 
 .productTab {
     .card {
-        max-width: 20vw;
+        max-width: 21vw;
         height: 25rem;
     }
 
@@ -50,7 +50,7 @@
 
     .card-text-hidden p {
         color: var(--gray);
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
     }
 
@@ -102,7 +102,7 @@
     overflow-y: auto;
 }
 
-@media (max-width: 1024px) and (min-width: 1024px) {
+@media (max-width: 1024px) {
     .productTab {
 
         .row-cols-md-4 > * {
@@ -111,7 +111,15 @@
         }
 
         .card {
-            max-width: 30vw;
+            max-width: 34vw;
+            height: 20rem;
+        }
+
+        .card.expanded {
+            .card-footer {
+                height: 70%;
+                top: 30%;
+            }
         }
     }
 }
@@ -128,8 +136,9 @@
         }
     
         .card-text-hidden p {
-            font-size: 10px;
+            font-size: 8px;
         }
+
     }
 }
 
@@ -153,5 +162,11 @@
         .card {
             max-width: 60vw;
         }
+    }
+}
+
+@media (min-width: 769px) {
+    .productTab {
+        margin-top: 6rem !important;
     }
 }

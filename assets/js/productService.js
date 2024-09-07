@@ -121,7 +121,7 @@ const createProductCard = (productData) => {
 
     // Cria as acoes do card
     const cardActions = document.createElement('div');
-    cardActions.classList.add('card-buttons', 'd-grid', 'gap-2', 'd-md-flex', 'justify-content-md-end');
+    cardActions.classList.add('card-buttons', 'd-flex', 'gap-2', 'justify-content-end');
     const btnBuy = '<button type="button" class="btn btn-success rounded-3">Comprar</button>';
     const btnCart = '<button type="button" class="btn btn-outline-success rounded-3"><i class="fa-solid fa-cart-shopping"></i></button>';
     // Adiciona os botoes de acoes
