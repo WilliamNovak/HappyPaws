@@ -1,10 +1,3 @@
-// Array com dados dos pets
-const petsData = [
-    { name: "Nome do Pet", type: "Tipo de Pet", breed: "Raça do Pet", size: "Pequeno", image: "./assets/img/dog_shower.jpg" },
-    { name: "Nome do Pet", type: "Tipo de Pet", breed: "Raça do Pet", size: "Pequeno", image: "./assets/img/dog_shower.jpg" },
-    { name: "Nome do Pet", type: "Tipo de Pet", breed: "Raça do Pet", size: "Pequeno", image: "./assets/img/dog_shower.jpg" }
-];
-
 // Gera linhas de pets dinamicamente
 const generatePetRows = (data) => {
     

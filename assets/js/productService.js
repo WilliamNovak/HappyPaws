@@ -1,11 +1,3 @@
-// Array com dados dos pets
-const petsData = [
-    { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" },
-    { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" },
-    { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" },
-    { name: "Nome do Pet", breed: "Golden Retriever", age: 2, size: "P", image: "./assets/img/dog_shower.jpg" }
-];
-
 // Gera cards de pets para servico dinamicamente
 const generatePetCards = (data, service) => {
     
@@ -51,7 +43,7 @@ const generatePetCards = (data, service) => {
             <div class="card-body">
                 <h5 class="card-title">${pet.name}</h5>
                 <p class="card-text">Raça: ${pet.breed}</p>
-                <p class="card-text"><small class="text-muted">Idade: ${pet.age} anos - Porte: ${pet.size}</small></p>
+                <p class="card-text"><small class="text-muted">Idade: ${pet.age} anos - Porte: ${pet.sizeLetter}</small></p>
             </div>
         `;
 
