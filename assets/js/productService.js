@@ -72,6 +72,77 @@ const generatePetCards = (data, service) => {
     });
 }
 
+// Cria um novo card de produto
+function createProductCard(productData) {
+    // Cria os elementos HTML
+    const card = document.createElement('div');
+    card.classList.add('col', 'd-flex', 'justify-content-center', 'm-0');
+    // Cria o card
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('card', 'rounded-4');
+
+    // Cria a div do preco do card
+    cardPrice = `<div class="card-price p-2"><span>${productData.price}</span></div>`;
+  
+    // Cria a imagem do card
+    const image = document.createElement('img');
+    image.classList.add('card-img-top', 'card-img', 'rounded-top-4');
+    image.src = productData.image;
+    image.alt = productData.altText;
+
+    // Cria o footer do card
+    const cardFooter = document.createElement('div');
+    cardFooter.classList.add('card-footer', 'py-3', 'rounded-bottom-4');
+
+    // Cria o titulo do card
+    const cardTitle = document.createElement('div');
+    cardTitle.classList.add('row', 'card-title', 'd-flex', 'align-items-center', 'h-25', 'mb-0');
+
+    const h5 = `<h5 class="col-10 m-0">${productData.title}</h5>`;
+
+    const cardButton = document.createElement('button');
+    cardButton.classList.add('col-2', 'btn');
+    cardButton.type = 'button';
+    cardButton.onclick = 'showHideCardDescription(this)';
+    cardButton.appendChild('<i class="fa-solid fa-plus"></i>');
+
+    // Adiciona os elementos do titulo
+    cardTitle.appendChild(h5);
+    cardTitle.appendChild(cardButton);
+  
+    // Cria a descricao do card
+    const cardDescription = document.createElement('div');
+    cardDescription.classList.add('row', 'card-text-hidden', 'h-75', 'position-relative', 'pt-2');
+    cardDescription.style.display = 'none';
+
+    // Cria as acoes do card
+    const cardActions = document.createElement('div');
+    cardActions.classList.add('card-buttons', 'd-grid', 'gap-2', 'd-md-flex', 'justify-content-md-end');
+    const btnBuy = '<button type="button" class="btn btn-success rounded-3">Comprar</button>';
+    const btnCart = '<button type="button" class="btn btn-outline-success rounded-3"><i class="fa-solid fa-cart-shopping"></i></button>';
+    // Adiciona os botoes de acoes
+    cardActions.appendChild(btnBuy);
+    cardActions.appendChild(btnCart);
+
+    // Adiciona os elementos na description do card
+    cardDescription.appendChild(`<p class="card-text m-0">${productData.description}</p>`);
+    cardDescription.appendChild(cardActions);
+
+    // Adiciona os elementos no footer do card
+    cardFooter.appendChild(cardTitle);
+    cardFooter.appendChild(cardDescription);
+  
+    // Adiciona os elementos filhos ao card
+    cardElement.appendChild(cardPrice);
+    cardElement.appendChild(image);
+    cardElement.appendChild(cardFooter);
+  
+    card.appendChild(cardElement);
+  
+    // Retorna o card criado
+    return card;
+}
+
 // Funcao que controla a regiao da descricao dos cards de produtos
 const showHideCardDescription = (btn) => {
     // Seleciona o elemento com classe card mais proximo
