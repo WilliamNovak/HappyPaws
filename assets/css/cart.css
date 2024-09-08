@@ -1,6 +1,6 @@
 /* Define o tamanho maximo do container */
 .container {
-    max-width: 1000px;
+    max-width: 900px;
 }
 
 /* Remove a margem abaixo da tabela */
@@ -8,8 +8,8 @@
     margin-bottom: 0;
 }
 
-/* Cor de fundo do header das tabelas */
-th {
+/* Cor de fundo do header das tabelas e total */
+th, .cart-total {
     background-color: var(--light-gray) !important;
 }
 
@@ -20,15 +20,16 @@ th {
     border-color: var(--light-gray);
 }
 
-/* Define altura de cada item */
-.cart-item {
-    height: 15vh;
-}
-
 /* Define a altura e a largura maxia da imagem dos itens */
 .cart-item img {
     height: 120px;
     max-width: 120px;
+}
+
+/* Estiliza texto dos itens do carrinho */
+.item-description {
+    color: var(--dark-green);
+    font-weight: 600;
 }
 
 /* Estiliza o link de remover */
@@ -41,4 +42,10 @@ th {
 /* Adiciona sublinhado ao colocar cursor */
 .item-link:hover {
     text-decoration: underline;
+}
+
+/* Estiliza a fonte dos totais */
+.total-label {
+    color: var(--gray);
+    font-weight: 600;
 }
