@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos e Serviços</title>
+    <title>Carrinho</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Arquivos CSS -->
     <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/productService.css">
 
     <!-- Fontes do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,92 +77,27 @@
         </div>
     </nav>
 
-    <main class="container-fluid mt-4 vh-100 position-relative d-flex justify-content-center" style="padding-top: 65px;">
-        <div class="w-100">
-            <div class="row">
-                <ul class="nav nav-underline justify-content-center p-0" id="pageTabs" role="tablist">
-                    <li class="nav-item pe-2" role="tabs">
-                        <button class="nav-link active" id="productTab" data-bs-toggle="tab" data-bs-target="#productsTab" type="button" role="tab" aria-controls="productsTab" aria-selected="true">Produtos</button>
-                    </li>
-                    <li class="nav-item ps-2" role="tabs">
-                        <button class="nav-link" id="serviceTab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false">Serviços</button>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center h-75">
-                <div class="tab-content d-flex align-items-center justify-content-center w-100" id="tabContents">
-                    <!-- Tab de Produtos -->
-                    <div class="tab-pane fade show active productTab h-100 w-100 mt-3" id="productsTab" role="tabpanel" aria-labelledby="productTab">
-                        <!-- Div com os cards dos produtos -->
-                        <div id="productCarousel" class="carousel slide row" data-bs-theme="dark">
-                            <button class="carousel-button col-1 pe-0" type="button" onclick="activeInterval()" data-bs-target="#productCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </button>
-                            <div id="products" class="col-10 px-0" data-bs-theme="light">
-                            </div>
-                            <button class="carousel-button col-1 ps-0" type="button" onclick="activeInterval()" data-bs-target="#productCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Tab de Servicos -->
-                    <div class="tab-pane fade serviceTab" id="services" role="tabpanel" aria-labelledby="serviceTab">
-                        <div class="row justify-content-md-center gap-4">
-                            <div class="col-md-5 col-lg-4 d-flex justify-content-center">
-                                <div class="card rounded-4">
-                                    <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="Banho">
-                                        <img src="./assets/img/dog_shower.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro tomando banho">
-                                        <div class="text-center">
-                                            <h4 class="fw-bolder">Banho</h4>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-lg-4 d-flex justify-content-center">
-                                <div class="card rounded-4">
-                                    <button type="button" class="btn h-100 w-100 p-0" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="Tosa">
-                                        <img src="./assets/img/dog_grommig.jpg" class="card-img img-fluid rounded-top-5" alt="Imagem de um cachorro sendo tosado">
-                                        <div class="text-center">
-                                            <h4 class="fw-bolder">Tosa</h4>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Conteudo da pagina -->
+    <main class="container vh-100" style="padding-top: 65px;">
+        <!-- Linha com titulo e botoes da pagina -->
+        <div class="row">
+            <div class="d-grid d-md-flex justify-content-md-between align-items-md-center p-4">
+                <h2 class="region-title m-0">
+                    <i class="fa-solid fa-cart-shopping me-2"></i>
+                    <span>Carrinho</span>
+                </h2>
+                <div class="d-grid d-md-flex gap-2 justify-content-md-end">
+                    <button type="button" class="btn btn-secondary px-3">
+                        <i class="fa-solid fa-chevron-left me-1"></i>
+                        <span>Voltar</span>
+                    </button>
+                    <button type="button" class="btn btn-success px-5">
+                        <span class="fw-bold">Fechar Pedido</span>
+                    </button>
                 </div>
             </div>
         </div>
     </main>
-
-    <!-- Modal Contratar Servico -->
-    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <!-- Header da modal -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceModalLabel">Contratar Serviço</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <!-- Corpo da modal -->
-                <div class="modal-body">
-                    <div id="serviceContainer" class="container-fluid">
-                    </div>
-                </div>
-                <!-- Footer da modal com botoes -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button id="cartButton" type="submit" class="btn btn-outline-success">
-                        <span>Adicionar ao Carrinho</span>
-                    </button>
-                    <button id="contractButton" type="submit" class="btn btn-success">
-                        <span>Contratar Serviços</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer bottom-0 bg-primary-green">
@@ -238,15 +172,10 @@
             </div>
         </div>
     </footer>
-    
+
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Script Fontawesome -->
     <script src="https://kit.fontawesome.com/d974cc6bff.js" crossorigin="anonymous"></script>
-    <!-- Script jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- Arquivos Javascript -->
-    <script src="./assets/js/data.js"></script>
-    <script src="./assets/js/productService.js"></script>
 </body>
 </html>

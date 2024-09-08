@@ -83,6 +83,10 @@ aside * {
     font-weight: 800;
 }
 
+.region-title * {
+    font-size: inherit;
+}
+
 .form-floating > label {
     left: auto;
     color: var(--gray);
