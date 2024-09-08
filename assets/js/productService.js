@@ -7,6 +7,7 @@ function nextSlide() {
 
 // Ativa intervalo para passar slides
 function activeInterval() {
+    clearInterval(interval);
     timer = window.screen.width <= 480 ? 5000 : 10000;
     interval = setInterval(nextSlide, timer);
 }
