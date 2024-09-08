@@ -1,0 +1,44 @@
+/* Define o tamanho maximo do container */
+.container {
+    max-width: 1000px;
+}
+
+/* Remove a margem abaixo da tabela */
+.table {
+    margin-bottom: 0;
+}
+
+/* Cor de fundo do header das tabelas */
+th {
+    background-color: var(--light-gray) !important;
+}
+
+/* Adiciona bordar no container do carrinho */
+.cart-container {
+    border: 3px;
+    border-style: solid;
+    border-color: var(--light-gray);
+}
+
+/* Define altura de cada item */
+.cart-item {
+    height: 15vh;
+}
+
+/* Define a altura e a largura maxia da imagem dos itens */
+.cart-item img {
+    height: 120px;
+    max-width: 120px;
+}
+
+/* Estiliza o link de remover */
+.item-link {
+    color: red;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+/* Adiciona sublinhado ao colocar cursor */
+.item-link:hover {
+    text-decoration: underline;
+}
