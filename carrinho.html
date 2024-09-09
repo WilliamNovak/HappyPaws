@@ -19,63 +19,7 @@
 <body class="min-vh-100">
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-primary-green">
-        <div class="container-fluid aling-content-center">
-            <!-- Logo e nome do Petshop -->
-            <a class="navbar-brand d-flex align-items-center gap-2 ms-2" href="index.html">
-                <img src="./assets/img/logo.png" alt="Logo" width="40" height="35" class="d-inline-block align-text-top"/>
-                <div class="lh-sm">
-                    Patinhas<br>Felizes
-                </div>
-            </a>
-            <!-- Navbar popup responsiva -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end bg-primary-green" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <!-- Titulo navbar popup -->
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Patinhas Felizes</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <!-- Nav Links -->
-                <div class="offcanvas-body justify-content-end">
-                    <ul class="navbar-nav me-4 mb-2 mb-lg-0 gap-4">
-                        <li class="nav-item">
-                            <a class="nav-link" href="productService.html?tab=productTab">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="productService.html?tab=serviceTab">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pets.html">Pets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="carrinho.html">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item d-flex align-items-center dropdown">
-                            <a class="nav-link p-0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="circle d-flex align-items-center justify-content-center">
-                                    <span>WN</span>
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="account.html">
-                                    <i class="fa-regular fa-user me-1"></i>
-                                    Minha Conta
-                                </a></li>
-                                <li><a class="dropdown-item" href="index.html">
-                                    <i class="fa-solid fa-arrow-right-from-bracket me-1"></i>
-                                    Sair
-                                </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <nav id="loggedNav" class="navbar fixed-top navbar-expand-lg bg-primary-green">
     </nav>
 
     <!-- Conteudo da pagina -->
