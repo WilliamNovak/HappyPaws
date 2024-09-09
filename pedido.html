@@ -78,13 +78,48 @@
     </nav>
 
     <!-- Conteudo principal da pagina -->
-    <main class="min-vh-100" style="padding-top: 65px;">
+    <main class="min-vh-100 mb-5" style="padding-top: 65px;">
         <div class="container">
+            <div class="d-grid d-md-flex justify-content-md-between align-items-md-center mx-3 mt-4 px-3">
+                <h2 class="region-title m-0">
+                    <span>Pedido</span>
+                </h2>
+                <div class="d-grid d-md-flex gap-2 justify-content-md-end">
+                    <button type="button" class="btn btn-secondary px-3">
+                        <i class="fa-solid fa-chevron-left me-1"></i>
+                        <span>Voltar</span>
+                    </button>
+                    <a href="pedido.html"><button type="button" class="btn btn-success px-5">
+                        <span class="fw-bold">Fechar Pedido</span>
+                    </button></a>
+                </div>
+            </div>
             <!-- Informacoes do Pedido -->
             <div class="row mx-3">
                 <fieldset class="mt-3">
-                    <legend class="form-title ps-1">Pedido</legend>
-                    <div class="container-fluid input-fieldset">
+                    <div class="pedidoInfo container-fluid input-fieldset">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="fw-bold">Resumo do Pedido</h4>
+                                <ul>
+                                    <li>x1 Ração seca para cães de pequeno porte</li>
+                                    <li>x2 Ração úmida para gatos de grande porte</li>
+                                    <li>x1 Banho cachorro porte grande</li>
+                                    <li>x1 Tosa cachorro porte pequeno</li>
+                                </ul>
+                            </div>
+                            <div class="col position-relative">
+                                <div class="container-fluid position-absolute bottom-0" style="right: 0;">
+                                    <div class="row d-flex mb-2">
+                                        <h5 class="col-8 text-end fw-bold">Total dos itens: <span>R$306,70</span></h5>
+                                        <h5 class="col-4 text-end fw-bold">Frete: <span>R$7,50</span></h5>
+                                    </div>
+                                    <div class="row">
+                                        <h4 class="text-end fw-bold">Total do Pedido: <span class="fs-4">R$314,20</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
             </div>

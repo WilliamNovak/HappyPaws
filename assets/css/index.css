@@ -137,6 +137,18 @@ aside * {
     height: 3.6rem;
 }
 
+.pedidoInfo {
+    color: var(--gray);
+
+    h4, h5 {
+        color: var(--dark-green);
+    }
+
+    span {
+        color: #198754;
+    }
+}
+
 @media (max-width: 820px) {
     .footer-info {
         display: flex;
