@@ -32,6 +32,12 @@ th, .cart-total {
     font-weight: 600;
 }
 
+/* Estiliza o input da quantidade */
+.cart-item input {
+    height: 3rem !important;
+    min-height: 0 !important;
+}
+
 /* Estiliza o link de remover */
 .item-link {
     color: red;
