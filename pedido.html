@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemon&display=swap" rel="stylesheet">
 </head>
-<body class="min-vh-100">
+<body>
 
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg bg-primary-green">
@@ -78,7 +78,7 @@
     </nav>
 
     <!-- Conteudo principal da pagina -->
-    <main style="padding-top: 65px;">
+    <main class="min-vh-100" style="padding-top: 65px;">
         <div class="container">
             <!-- Informacoes do Pedido -->
             <div class="row mx-3">
@@ -95,6 +95,7 @@
                         <legend class="form-title ps-1">Agendamento</legend>
                         <div class="container-fluid input-fieldset">
                             <div class="d-flex mb-4 w-50">
+                                <!-- Opcoes de tele-busca ou retirada -->
                                 <ul class="nav" id="pageTabs" role="tablist">
                                     <li class="nav-item" role="tabs">
                                         <div class="form-check me-3">
@@ -115,6 +116,7 @@
                                 </ul>
                             </div>
                             <div class="tab-content w-100" id="tabContents">
+                                <!-- Dados de endereco para tele-busca -->
                                 <div class="tab-pane fade show active h-100 w-100" id="deliveryTab" role="tabpanel" aria-labelledby="deliveryTab">
                                     <div class="row d-flex mb-4">
                                         <div class="col-4 form-floating">
@@ -130,7 +132,7 @@
                                             <label for="cityInput" class="fw-semibold">Cidade</label>
                                         </div>
                                     </div>
-                                    <div class="row d-flex">
+                                    <div class="row d-flex mb-4">
                                         <div class="col-5 form-floating">
                                             <input type="text" class="form-control input-field" placeholder="Bairro" id="districtInput" name="district">
                                             <label for="districtInput" class="fw-semibold">Bairro</label>
@@ -140,12 +142,78 @@
                                             <label for="addressInput" class="fw-semibold">Endereço</label>
                                         </div>
                                         <div class="col-2 form-floating">
-                                            <input type="number" class="form-control input-field" id="numberInput" name="addressNumber">
+                                            <input type="number" class="form-control input-field" placeholder="Número" id="numberInput" name="addressNumber">
                                             <label for="numberInput" class="fw-semibold">Número</label>
                                         </div>
                                     </div>
+                                    <div class="row d-flex">
+                                        <div class="col-5 form-floating">
+                                            <select class="form-select form-control input-field" id="dataTimeSelect" name="dataTime" aria-label="Data/hora agendamento">
+                                                <option selected>Data/hora agendamento</option>
+                                                <option value="090920241300">09/09/2024 - 13:00</option>
+                                                <option value="090920241500">09/09/2024 - 15:00</option>
+                                                <option value="090920241900">09/09/2024 - 19:00</option>
+                                                <option value="100920240800">10/09/2024 - 08:00</option>
+                                                <option value="100920241000">10/09/2024 - 10:00</option>
+                                                <option value="100920241200">10/09/2024 - 12:00</option>
+                                                <option value="100920241600">10/09/2024 - 16:00</option>
+                                            </select>
+                                            <label for="dataTimeSelect" class="fw-semibold">Agendamento</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade show h-100 w-100" id="noDeliveryTab" role="tabpanel" aria-labelledby="noDeliveryTab">teste</div>
+                                <!-- Agendamento de retirada -->
+                                <div class="tab-pane fade show h-100 w-100" id="noDeliveryTab" role="tabpanel" aria-labelledby="noDeliveryTab">
+                                    <div class="row d-flex">
+                                        <div class="col-5 form-floating">
+                                            <select class="form-select form-control input-field" id="dataTimeSelect" name="dataTime" aria-label="Data/hora agendamento">
+                                                <option selected>Data/hora agendamento</option>
+                                                <option value="090920241300">09/09/2024 - 13:00</option>
+                                                <option value="090920241500">09/09/2024 - 15:00</option>
+                                                <option value="090920241900">09/09/2024 - 19:00</option>
+                                                <option value="100920240800">10/09/2024 - 08:00</option>
+                                                <option value="100920241000">10/09/2024 - 10:00</option>
+                                                <option value="100920241200">10/09/2024 - 12:00</option>
+                                                <option value="100920241600">10/09/2024 - 16:00</option>
+                                            </select>
+                                            <label for="dataTimeSelect" class="fw-semibold">Agendamento</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!-- Dados para pagamento -->
+                <div class="row mx-3">
+                    <fieldset class="mt-3">
+                        <legend class="form-title ps-1">Forma de Pagamento</legend>
+                        <div class="container-fluid input-fieldset">
+                            <div class="row d-flex">
+                                <div class="col-5 form-floating">
+                                    <select class="form-select form-control input-field" id="paymentSelect" name="payment" aria-label="Data/hora agendamento">
+                                        <option selected>Selecione a forma de pagamento</option>
+                                        <option value="pix">Pix</option>
+                                        <option value="dinheiro">Dinheiro</option>
+                                        <option value="credito">Cartão de crédito</option>
+                                        <option value="cartaoEntrega">Cartão na entrega</option>
+                                    </select>
+                                    <label for="dataTimeSelect" class="fw-semibold">Forma de Pagamento</label>
+                                </div>
+                            </div>
+                            <div class="row mt-4" id="paymentDiv" style="display: none;">
+                                <div class="col-5 form-floating">
+                                    <input type="text" class="form-control input-field" placeholder="Número do Cartão" id="creditCardInput" name="creditCard">
+                                    <label for="creditCardInput" class="fw-semibold">Número do Cartão</label>
+                                </div>
+                                <div class="col-5 form-floating">
+                                    <input type="text" class="form-control input-field" placeholder="Nome do Titular" id="creditCardNameInput" name="creditCardName">
+                                    <label for="creditCardNameInput" class="fw-semibold">Nome do Titular</label>
+                                </div>
+                                <div class="col-2 form-floating">
+                                    <input type="number" class="form-control input-field" placeholder="CVV" id="cvvInput" name="cvv">
+                                    <label for="cvvInput" class="fw-semibold">CVV</label>
+                                </div>
                             </div>
                         </div>
                     </fieldset>
