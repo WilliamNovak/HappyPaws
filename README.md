@@ -1,6 +1,6 @@
 # :dog: HappyPaws
 Front-end university project for a fictitious pet shop
-:computer: [Demo](link)
+:computer:  [Demo](link)
 
 ## Description
 
