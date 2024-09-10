@@ -8,7 +8,6 @@ $(document).ready(function() {
 
     // Verifica qual a pagina atual
     page = window.location.pathname.split('/').pop();
-    console.log(page)
 
     // Verifica se esta na pagina home
     if (page === 'index.html' || page === '' || page === undefined) {
