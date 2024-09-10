@@ -11,7 +11,7 @@ $(document).ready(function() {
     console.log(page)
 
     // Verifica se esta na pagina home
-    if (page === 'index.html') {
+    if (page === 'index.html' || page === '' || page === undefined) {
         const urlParams = new URLSearchParams(window.location.search);
         // Verifica se esta logado
         const logged = urlParams.get('logged');
