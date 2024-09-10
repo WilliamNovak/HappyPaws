@@ -1,3 +1,4 @@
+/* Formata tabs de navegacao */
 .nav-underline {
     .nav-link, .nav-link.active {
         font-size: 24px;
@@ -10,12 +11,15 @@
     }
 }
 
+/* Formata tab de produto */
 .productTab {
+    /* Define altura e largura do card */
     .card {
         max-width: 21vw;
         height: 25rem;
     }
 
+    /* Formata o preco do produto no canto superior do card */
     .card-price {
         position: absolute;
         top: 0;
@@ -32,77 +36,92 @@
         z-index: 1;
     }
 
+    /* Formata imagem do card */
     .card-img {
-        height: 76%;
+        height: 76%; // 76% da altura do card
         max-width: 100%;
     }
 
+    /* Formata o footer do card */
     .card-footer {
-        height: 24%;
+        height: 24%; // 24% da altura do card
         overflow: hidden;
     }
 
+    /* Formata o titulo do card */
     .card-title * {
         color: var(--dark-green);
         font-size: 16px;
         font-weight: 800;
     }
 
+    /* Formata o paragrafo da descricao do card */
     .card-text-hidden p {
         color: var(--gray);
         font-size: 12px;
         font-weight: 600;
     }
 
+    /* Posiciona regiao de botoes do card */
     .card-buttons {
         position: absolute;
         bottom: 0;
         right: 0;
     }
     
+    /* Ajusta card ao abrir descricao */
     .card.expanded {
 
+        /* Altera a visualizacao do footer do card para abrir sobre a imagem */
         .card-footer {
             position: absolute;
-            height: 60%;
-            top: 40%;
+            height: 60%; // altera a altura
+            top: 40%; // top para completar os 100
             left: 0;
             right: 0;
             background-color: white;
         }
 
+        /* Escurece imagem do card */
         .card-img {
             height: 100%;
             filter: brightness(0.85);
         }
     }
 
+    /* Estiliza botao do carrossel */
     .carousel-button {
         background-color: transparent;
         border: 0;
     }
 }
 
+/* Formata tab de servicos */
 .serviceTab {
+    /* Altura e largura do card */
     .card {
         max-width: 50vw;
         max-height: 50vh;
     }
     
+    /* Altura maxima da imagem */
     .card-img {
         max-height: 90%;
     }
-    
+
+    /* Animacao ao sobrepor card com o cursor */
     .card:hover {
         transform: scale(1.02);
     }
 }
 
+/* Define tamanho da modal */
 .modal-body {
     max-height: 500px;
     overflow-y: auto;
 }
 
+/* Ajustes para dispositivos de ate 1024px de largura */
 @media (max-width: 1024px) {
     .productTab {
 
@@ -125,6 +144,7 @@
     }
 }
 
+/* Ajustes para dispositivos de ate 768px de largura */
 @media (max-width: 768px) {
     .productTab {
 
@@ -143,6 +163,7 @@
     }
 }
 
+/* Ajustes para dispositivos de ate 480px de largura */
 @media (max-width: 480px) {
     main {
         .card {
@@ -166,6 +187,7 @@
     }
 }
 
+/* Ajuste para dispositivos de no minimo 769px de largura */
 @media (min-width: 769px) {
     .productTab {
         margin-top: 6rem !important;
