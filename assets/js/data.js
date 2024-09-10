@@ -7,7 +7,7 @@ const petsData = [
         age: 2,
         size: "Pequeno",
         sizeLetter: "P",
-        image: "./assets/img/dog_shower.jpg"
+        image: "./assets/img/munchkin.jpg"
     },
     { 
         name: "Duque",
@@ -16,7 +16,7 @@ const petsData = [
         age: 4,
         size: "Grande",
         sizeLetter: "G",
-        image: "./assets/img/dog_shower.jpg"
+        image: "./assets/img/golden.jpg"
     },
     {
         name: "Laskita",
@@ -25,7 +25,7 @@ const petsData = [
         age: 8,
         size: "Pequeno",
         sizeLetter: "P",
-        image: "./assets/img/dog_shower.jpg"
+        image: "./assets/img/pinscher.jpg"
     }
 ];
 

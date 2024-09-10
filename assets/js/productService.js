@@ -30,7 +30,7 @@ const generatePetCards = (data, service) => {
 
         // Primeira coluna da linha
         const col1 = document.createElement('div');
-        col1.classList.add('col-md-4');
+        col1.classList.add('col-md-4', 'd-flex', 'align-items-center');
         // Input checkbox
         const check = document.createElement('input');
         check.type = 'checkbox';
@@ -42,8 +42,8 @@ const generatePetCards = (data, service) => {
         image.src = pet.image;
         image.classList.add('rounded', 'img-fluid');
         image.alt = 'Imagem do Pet';
-        image.width = 150;
-        image.height = 150;
+        image.width = 100;
+        image.height = 100;
         col1.appendChild(image);
         // Adiciona a primeira coluna
         row.appendChild(col1);
