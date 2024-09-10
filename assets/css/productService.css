@@ -75,8 +75,8 @@
         /* Altera a visualizacao do footer do card para abrir sobre a imagem */
         .card-footer {
             position: absolute;
-            height: 60%; // altera a altura
-            top: 40%; // top para completar os 100
+            height: 60%;
+            top: 40%;
             left: 0;
             right: 0;
             background-color: white;
