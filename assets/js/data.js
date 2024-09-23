@@ -1,6 +1,7 @@
 // Array com dados dos pets
 const petsData = [
     { 
+        id: 1,
         name: "Pudim",
         type: "Gato",
         breed: "Munchkin",
@@ -10,6 +11,7 @@ const petsData = [
         image: "./assets/img/munchkin.jpg"
     },
     { 
+        id: 2,
         name: "Duque",
         type: "Cachorro",
         breed: "Golden Retriever",
@@ -19,6 +21,7 @@ const petsData = [
         image: "./assets/img/golden.jpg"
     },
     {
+        id: 3,
         name: "Laskita",
         type: "Cachorro",
         breed: "Pinscher",
