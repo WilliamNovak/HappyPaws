@@ -1,20 +1,20 @@
 const showCartItem = (item, amount) => {
     // Cria a linha do carrinho
-    var productRow = document.createElement("tr");
+    let productRow = document.createElement("tr");
     productRow.classList.add("cart-item");
 
     // Cria a primeira célula (imagem e descrição)
-    var descriptionCell = document.createElement("td");
+    let descriptionCell = document.createElement("td");
     descriptionCell.classList.add("d-flex", "align-items-center");
 
     // Cria a imagem do produto
-    var image = document.createElement("img");
+    let image = document.createElement("img");
     image.src = item.image;
     image.alt = item.altText;
     image.classList.add("rounded-3");
 
     // Cria a descricao do produto
-    var description = document.createElement("p");
+    let description = document.createElement("p");
     description.textContent = item.title;
     description.classList.add("item-description", "m-0", "mx-3");
 
@@ -22,19 +22,19 @@ const showCartItem = (item, amount) => {
     descriptionCell.appendChild(description);
 
     // Cria a segunda célula (preço)
-    var priceCell = document.createElement("td");
+    let priceCell = document.createElement("td");
     priceCell.classList.add("align-middle");
     priceCell.textContent = item.price;
 
     // Cria a terceira célula (quantidade)
-    var amountCell = document.createElement("td");
+    let amountCell = document.createElement("td");
     amountCell.classList.add("align-middle", "text-center");
 
-    var amoutDiv = document.createElement("div");
+    let amoutDiv = document.createElement("div");
     amoutDiv.classList.add("col-8", "form-floating");
 
     // Input da quantidade
-    var inputQuantidade = document.createElement("input");
+    let inputQuantidade = document.createElement("input");
     inputQuantidade.type = "number";
     inputQuantidade.classList.add("form-control", "input-field", "py-1");
     inputQuantidade.id = "qtdInput";
@@ -46,10 +46,10 @@ const showCartItem = (item, amount) => {
     amountCell.appendChild(amoutDiv);
 
     // Cria a quarta célula (remover)
-    var removeCell = document.createElement("td");
+    let removeCell = document.createElement("td");
     removeCell.classList.add("align-middle");
 
-    var removeButton = document.createElement("button");
+    let removeButton = document.createElement("button");
     removeButton.style.textDecoration = "none";
     removeButton.style.background = "none";
     removeButton.style.border = "none";
@@ -87,14 +87,21 @@ const refreshCart = () => {
     // Limpa os produtos
     const productTable = document.getElementById('productTable');
     productTable.innerHTML = '';
+    let total = 0;
 
     // Busca os produtos na memoria e mostra no carrinho
     for (item of cart) {
-        console.log(item)
         let product = productsData.find(p => p.id === item.id);
         let amount = item.quantidade;
+        // mostra no carrinho
         showCartItem(product, amount);
+        // acrescenta ao valor total
+        total += parseFloat(product.price.substring(2).replace(',', '.')) * amount;
     }
+
+    // Atualiza o total dos produtos
+    const totalProducts = document.getElementById('totalProducts');
+    totalProducts.innerHTML = `R${total.toFixed(2).replace('.',',')}`;
 }
 
 $(document).ready(function() {
