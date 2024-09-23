@@ -26,6 +26,18 @@ function addCartItem(id) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// Funcao para remover um item do carrinho
+function removeCartItem(id) {
+    // Obtem o carrinho do localStorage
+    let cart = JSON.parse(localStorage.getItem('cart'));
+  
+    // Filtra para eliminar o elemento que deseja remover do carrinho
+    cart = cart.filter(item => item.id !== id);
+  
+    // Atualiza para o novo carrinho sem o item
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 // Executa ao carregar pagina
 $(document).ready(function() {
 

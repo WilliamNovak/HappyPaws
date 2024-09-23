@@ -49,12 +49,17 @@ const showCartItem = (item, amount) => {
     var removeCell = document.createElement("td");
     removeCell.classList.add("align-middle");
 
-    var linkRemover = document.createElement("a");
-    linkRemover.href = "";
-    linkRemover.textContent = "Remover";
-    linkRemover.classList.add("item-link");
+    var removeButton = document.createElement("button");
+    removeButton.style.textDecoration = "none";
+    removeButton.style.background = "none";
+    removeButton.style.border = "none";
+    removeButton.onclick = () => {
+        removeItem(item.id);
+    }
+    removeButton.textContent = "Remover";
+    removeButton.classList.add("item-link");
 
-    removeCell.appendChild(linkRemover);
+    removeCell.appendChild(removeButton);
 
     // Adiciona as células à linha do carrinho
     productRow.appendChild(descriptionCell);
@@ -65,15 +70,27 @@ const showCartItem = (item, amount) => {
     productTable.appendChild(productRow);
 }
 
+// Remove item do carrinho e atualiza ele
+const removeItem = (id) => {
+    console.log(id);
+    removeCartItem(id);
+    refreshCart();
+}
+
+// Atualiza o carrinho
 const refreshCart = () => {
+    // Verifica se ja existe o carrinho
     if (localStorage.cart){
         cart = JSON.parse(localStorage.getItem('cart'));
     }
 
+    // Limpa os produtos
     const productTable = document.getElementById('productTable');
     productTable.innerHTML = '';
 
+    // Busca os produtos na memoria e mostra no carrinho
     for (item of cart) {
+        console.log(item)
         let product = productsData.find(p => p.id === item.id);
         let amount = item.quantidade;
         showCartItem(product, amount);
