@@ -1,6 +1,29 @@
+let cart = [];
+
 // Funcao para voltar para pagina anterior
 function voltarPagina() {
     window.history.back();
+}
+
+// Funcao para adicionar item ao carrinho
+function addCartItem(id) {
+    // Verificar se ja existe algo no carrinho
+    if (localStorage.cart){
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+
+    // Verifica se o item ja esta no carrinho
+    cartItem = cart.find(item => item.id === id);
+
+    // Se ja estiver acrescenta mais 1 na quantidade, senao adiciona ao carrinho
+    if (cartItem) {
+        cartItem.quantidade++;
+    } else {
+        cart.push({ id: id, quantidade: 1 });
+    }
+
+    // Atualiza o carrinho
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // Executa ao carregar pagina
