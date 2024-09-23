@@ -32,6 +32,7 @@ const petsData = [
 // Array com dados dos produtos
 const productsData = [
     { 
+        id: 1,
         title: "Ração úmida para cães de pequeno porte",
         description: "Ração ideal para cães filhotes de pequeno porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$45,90",
@@ -39,6 +40,7 @@ const productsData = [
         altText: "Imagem de pacote de ração úmida para cães de pequeno porte"
     },
     { 
+        id: 2,
         title: "Ração seca para cães de pequeno porte",
         description: "Ração ideal para cães filhotes de pequeno porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$49,90",
@@ -46,6 +48,7 @@ const productsData = [
         altText: "Imagem de pacote de ração seca para cães de pequeno porte"
     },
     { 
+        id: 3,
         title: "Ração úmida para cães de grande porte",
         description: "Ração ideal para cães filhotes de grande porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$75,90",
@@ -53,6 +56,7 @@ const productsData = [
         altText: "Imagem de pacote de ração úmida para cães de grande porte"
     },
     { 
+        id: 4,
         title: "Ração seca para cães de grande porte",
         description: "Ração ideal para cães filhotes de grande porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$79,90",
@@ -60,6 +64,7 @@ const productsData = [
         altText: "Imagem de pacote de ração seca para cães de grande porte"
     },
     { 
+        id: 5,
         title: "Ração úmida para gatos de pequeno porte",
         description: "Ração ideal para gatos filhotes de pequeno porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$35,90",
@@ -67,6 +72,7 @@ const productsData = [
         altText: "Imagem de pacote de ração úmida para gatos de pequeno porte"
     },
     { 
+        id: 6,
         title: "Ração seca para gatos de pequeno porte",
         description: "Ração ideal para gatos filhotes de pequeno porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$39,90",
@@ -74,6 +80,7 @@ const productsData = [
         altText: "Imagem de pacote de ração seca para gatos de pequeno porte"
     },
     { 
+        id: 7,
         title: "Ração úmida para gatos de grande porte",
         description: "Ração ideal para gatos filhotes de grande porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$65,90",
@@ -81,6 +88,7 @@ const productsData = [
         altText: "Imagem de pacote de ração úmida para gatos de grande porte"
     },
     { 
+        id: 8,
         title: "Ração seca para gatos de grande porte",
         description: "Ração ideal para gatos filhotes de grande porte. Promove pele saudável e equilíbrio intestinal. Livre de corantes e aromatizantes artificiais.",
         price: "R$69,90",
