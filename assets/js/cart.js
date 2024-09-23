@@ -72,7 +72,6 @@ const showCartItem = (item, amount) => {
 
 // Remove item do carrinho e atualiza ele
 const removeItem = (id) => {
-    console.log(id);
     removeCartItem(id);
     refreshCart();
 }
