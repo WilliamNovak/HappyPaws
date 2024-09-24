@@ -43,36 +43,40 @@
         <!-- Conteudos do Carrinho -->
         <div class="cart-container rounded">
             <!-- Tabela com os produtos no carrinho -->
-            <table style="color: var(--gray);" class="table">
-                <!-- Header da tabela -->
-                <thead>
-                    <tr>
-                        <th class="col-6">Produto</th>
-                        <th class="col-2">Preço</th>
-                        <th class="col-2">Quantidade</th>
-                        <th class="col-2"></th>
-                    </tr>
-                </thead>
-                <!-- Body da tabela -->
-                <tbody id="productTable">
-                </tbody>
-            </table>
+            <div style="display: inline-block; max-height: 320px; overflow-y: auto;">
+                <table style="color: var(--gray);" class="table">
+                    <!-- Header da tabela -->
+                    <thead>
+                        <tr>
+                            <th class="col-6">Produto</th>
+                            <th class="col-2">Preço</th>
+                            <th class="col-2">Quantidade</th>
+                            <th class="col-2"></th>
+                        </tr>
+                    </thead>
+                    <!-- Body da tabela -->
+                    <tbody id="productTable">
+                    </tbody>
+                </table>
+            </div>
             <p class="total-label text-end pe-4 py-2 m-0">Valor total dos produtos: <span id="totalProducts" class="text-success fw-bold"></span></p>
             <!-- Tabela com os servicos no carrinho -->
-            <table style="color: var(--gray);" class="table">
-                <!-- Header da tabela -->
-                <thead>
-                    <tr>
-                        <th class="col-6">Serviço</th>
-                        <th class="col-2">Preço</th>
-                        <th class="col-2"></th>
-                        <th class="col-2"></th>
-                    </tr>
-                </thead>
-                <!-- Body da tabela -->
-                <tbody id="serviceTable">
-                </tbody>
-            </table>
+            <div style="display: inline-block; max-height: 320px; overflow-y: auto;">
+                <table style="color: var(--gray);" class="table">
+                    <!-- Header da tabela -->
+                    <thead>
+                        <tr>
+                            <th class="col-6">Serviço</th>
+                            <th class="col-2">Preço</th>
+                            <th class="col-2"></th>
+                            <th class="col-2"></th>
+                        </tr>
+                    </thead>
+                    <!-- Body da tabela -->
+                    <tbody id="serviceTable">
+                    </tbody>
+                </table>
+            </div>
             <p class="total-label text-end pe-4 py-2 m-0">Valor total dos serviços: <span id="totalServices" class="text-success fw-bold">R$125,00</span></p>
             <p class="cart-total text-end pe-4 py-1 m-0 fw-bold fs-5">Total Geral: <span id="totalCart" class="text-success fw-bold fs-5">R$306,70</span></p>
         </div>
