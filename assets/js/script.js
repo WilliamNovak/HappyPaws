@@ -38,6 +38,25 @@ function addCartItem(id = null, petId = null, service = null) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// Funcao para atualizar o item no carrinho
+function updateCartItem(id, quantidade) {
+    // Verificar se ja existe algo no carrinho
+    if (localStorage.cart){
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+
+    // Verifica se o item ja esta no carrinho
+    let cartItem = cart.find(item => item.id === id);
+
+    // Se estiver atualiza a quantidade
+    if (cartItem) {
+        cartItem.quantidade = quantidade;
+    }
+
+    // Atualiza o carrinho
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 // Funcao para remover um item do carrinho
 function removeCartItem(id = null, petId = null, service = null) {
     // Obtem o carrinho do localStorage

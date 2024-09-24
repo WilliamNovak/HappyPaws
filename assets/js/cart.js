@@ -42,6 +42,10 @@ const showCartItem = (type, item, amount, service, price) => {
         inputQuantidade.name = "productQtd";
         inputQuantidade.value = amount;
         inputQuantidade.max = "99";
+        inputQuantidade.min = "1";
+        inputQuantidade.onchange = function() {
+            updateCartItem(item.id, this.value)
+        }
         // Adiciona na celula
         amoutDiv.appendChild(inputQuantidade);
         amountCell.appendChild(amoutDiv);
