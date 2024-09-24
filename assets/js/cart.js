@@ -127,10 +127,10 @@ const refreshCart = () => {
     // Atualiza o total dos produtos
     const totalProducts = document.getElementById('totalProducts');
     totalProducts.innerHTML = `R$${productsPrice.toFixed(2).replace('.',',')}`;
-    // Atualiza o total dos produtos
+    // Atualiza o total dos servicos
     const totalServices = document.getElementById('totalServices');
     totalServices.innerHTML = `R$${servicesPrice.toFixed(2).replace('.',',')}`;
-    // Atualiza o total dos produtos
+    // Atualiza o total do carrinho
     const totalCart = document.getElementById('totalCart');
     totalCart.innerHTML = `R$${(productsPrice + servicesPrice).toFixed(2).replace('.',',')}`;
 }
