@@ -35,7 +35,6 @@ $(document).ready(function() {
         } else {
             // Busca o pet
             let pet = petsData.find(p => p.id === item.petId);
-            console.log(item)
             li.textContent = `x1 ${item.service} ${pet.type.toLowerCase()} porte ${pet.size.toLowerCase()}`;
             // acrescenta o valor dos servicos
             price += parseFloat(item.price);
