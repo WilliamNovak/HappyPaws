@@ -45,21 +45,17 @@
                         <div class="row">
                             <div class="col">
                                 <h4 class="fw-bold">Resumo do Pedido</h4>
-                                <ul>
-                                    <li>x1 Ração seca para cães de pequeno porte</li>
-                                    <li>x2 Ração úmida para gatos de grande porte</li>
-                                    <li>x1 Banho cachorro porte grande</li>
-                                    <li>x1 Tosa cachorro porte pequeno</li>
+                                <ul id="requestItems">
                                 </ul>
                             </div>
                             <div class="col position-relative">
                                 <div class="container-fluid position-absolute bottom-0" style="right: 0;">
                                     <div class="row d-flex mb-2">
-                                        <h5 class="col-8 text-end fw-bold">Total dos itens: <span>R$306,70</span></h5>
-                                        <h5 class="col-4 text-end fw-bold">Frete: <span>R$7,50</span></h5>
+                                        <h5 class="col-8 text-end fw-bold">Total dos itens: <span id="totalItems">R$306,70</span></h5>
+                                        <h5 class="col-4 text-end fw-bold">Frete: <span id="frete">R$7,50</span></h5>
                                     </div>
                                     <div class="row">
-                                        <h4 class="text-end fw-bold">Total do Pedido: <span class="fs-4">R$314,20</span></h4>
+                                        <h4 class="text-end fw-bold">Total do Pedido: <span id="total" class="fs-4">R$314,20</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -213,7 +209,8 @@
     <!-- Script jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- Arquivos Javascript -->
-     <script src="./assets/js/pedido.js"></script>
-     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/pedido.js"></script>
 </body>
 </html>
