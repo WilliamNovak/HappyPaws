@@ -1,4 +1,5 @@
 let interval = ''
+let services = []
 
 // Passa slide de produto
 function nextSlide() {
@@ -34,6 +35,9 @@ const generatePetCards = (data, service) => {
         // Input checkbox
         const check = document.createElement('input');
         check.type = 'checkbox';
+        check.onchange = () => {
+            controlService(pet.id, service);
+        }
         check.name = 'serviceCheck';
         check.classList.add('m-4');
         col1.appendChild(check);
@@ -224,6 +228,35 @@ const showHideCardDescription = (btn) => {
     cardTextHidden.style.display = cardTextHidden.style.display === 'none' ? 'block' : 'none';
 };
 
+// Funcao para controlar servicos marcados
+function controlService(petId, service) {
+    // Verificar se ja existe algo no carrinho
+    if (localStorage.services){
+        services = JSON.parse(localStorage.getItem('services'));
+    }
+
+    // Verifica se o servico esta marcado
+    let serviceItem = services.find(item => item.petId === petId && item.service === service);
+
+    // Se ja estiver remove, senao adiciona nos servicos marcados
+    if (serviceItem) {
+        services = services.filter(item => item.petId !== petId && item.service !== service);
+    } else {
+        services.push({ petId: petId, service: service });
+    }
+
+    // Atualiza os servicos marcados
+    localStorage.setItem('services', JSON.stringify(services));
+    console.log(services);
+}
+
+// Adiciona servicos selecionados ao carrinho
+const addServices = () => {
+    for (let item of services) {
+        addCartItem(null, item.petId, item.service);
+    }
+}
+
 // Executa ao carregar pagina
 $(document).ready(function() {
     // Pega os parametros da url
@@ -247,6 +280,21 @@ $(document).ready(function() {
 
         // Chama a funcao que adiciona as linhas dos pets
         generatePetCards(petsData, service);
+
+        // Limpa os servicos marcados
+        services = [];
+        localStorage.setItem('services', services);
+
+        let cartButton = document.getElementById('cartButton');
+        cartButton.onclick = () => {
+            addServices(service);
+            console.log(cart);
+        }
+
+        let contractButton = document.getElementById('contractButton');
+        contractButton.onclick = () => {
+            addServices(service);
+        }
     });
 
     activeInterval();
