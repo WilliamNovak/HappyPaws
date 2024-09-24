@@ -28,7 +28,8 @@ function addCartItem(id = null, petId = null, service = null) {
 
         // Se nao estiver, adiciona no carrinho
         if (!cartItem) {
-            cart.push({petId: petId, service: service})
+            let price = service === 'Banho' ? 50 : 75;
+            cart.push({petId: petId, service: service, price: price})
         }
     }
 
@@ -45,7 +46,7 @@ function removeCartItem(id = null, petId = null, service = null) {
     if (id) {
         cart = cart.filter(item => item.id !== id);
     } else {
-        cart = cart.filter(item => item.petId !== petId && item.service !== service);
+        cart = cart.filter(item => item.petId !== petId || item.service !== service);
     }
   
     // Atualiza para o novo carrinho sem o item
@@ -63,7 +64,6 @@ $(document).ready(function() {
         const urlParams = new URLSearchParams(window.location.search);
         // Verifica se esta logado
         const logged = urlParams.get('logged');
-        console.log(logged);
 
         // Se estiver logado, mostra navbar logado
         if (logged === 'true') {
