@@ -35,7 +35,7 @@
                     <i class="fa-solid fa-chevron-left me-1"></i>
                     <span>Voltar</span>
                 </button>
-                <a href="pedido.html"><button type="button" class="btn btn-success px-5">
+                <a href="pedido.html?carrinho=true"><button type="button" class="btn btn-success px-5">
                     <span class="fw-bold">Fechar Pedido</span>
                 </button></a>
             </div>
@@ -43,90 +43,42 @@
         <!-- Conteudos do Carrinho -->
         <div class="cart-container rounded">
             <!-- Tabela com os produtos no carrinho -->
-            <table style="color: var(--gray);" class="table">
-                <!-- Header da tabela -->
-                <thead>
-                    <tr>
-                        <th class="col-6">Produto</th>
-                        <th class="col-2">Preço</th>
-                        <th class="col-2">Quantidade</th>
-                        <th class="col-2"></th>
-                    </tr>
-                </thead>
-                <!-- Body da tabela -->
-                <tbody id="productTable">
-                    <tr class="cart-item">
-                        <td class="d-flex align-items-center">
-                            <img src="./assets/img/dry_dog_food.jpg" alt="Imagem de ração seca para cães de pequeno porte" class="rounded-3">
-                            <p class="item-description m-0 mx-3">Ração seca para cães de pequeno porte</p>
-                        </td>
-                        <td class="align-middle">R$49,90</td>
-                        <td class="align-middle text-center">
-                            <div class="col-8 form-floating">
-                                <input type="number" class="form-control input-field py-1" id="qtdInput" name="productQtd" value="1" max="2">
-                            </div>
-                        </td>
-                        <td class="align-middle">
-                            <a href="" class="item-link">Remover</a>
-                        </td>
-                    </tr>
-                    <tr class="cart-item">
-                        <td class="d-flex align-items-center">
-                            <img src="./assets/img/wet_cat_food_large.jpg" alt="Imagem de ração úmida para gatos de grande porte" class="rounded-3">
-                            <p class="item-description m-0 mx-3">Ração úmida para gatos de grande porte</p>
-                        </td>
-                        <td class="align-middle">R$65,90</td>
-                        <td class="align-middle text-center">
-                            <div class="col-8 form-floating">
-                                <input type="number" class="form-control input-field py-1" id="qtdInput" name="productQtd" value="2" max="2">
-                            </div>
-                        </td>
-                        <td class="align-middle">
-                            <a href="" class="item-link">Remover</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="total-label text-end pe-4 py-2 m-0">Valor total dos produtos: <span class="text-success fw-bold">R$181,70</span></p>
+            <div style="display: inline-block; max-height: 320px; overflow-y: auto;">
+                <table style="color: var(--gray);" class="table">
+                    <!-- Header da tabela -->
+                    <thead>
+                        <tr>
+                            <th class="col-6">Produto</th>
+                            <th class="col-2">Preço</th>
+                            <th class="col-2">Quantidade</th>
+                            <th class="col-2"></th>
+                        </tr>
+                    </thead>
+                    <!-- Body da tabela -->
+                    <tbody id="productTable">
+                    </tbody>
+                </table>
+            </div>
+            <p class="total-label text-end pe-4 py-2 m-0">Valor total dos produtos: <span id="totalProducts" class="text-success fw-bold"></span></p>
             <!-- Tabela com os servicos no carrinho -->
-            <table style="color: var(--gray);" class="table">
-                <!-- Header da tabela -->
-                <thead>
-                    <tr>
-                        <th class="col-6">Serviço</th>
-                        <th class="col-2">Preço</th>
-                        <th class="col-2"></th>
-                        <th class="col-2"></th>
-                    </tr>
-                </thead>
-                <!-- Body da tabela -->
-                <tbody id="serviceTable">
-                    <tr class="cart-item">
-                        <td class="d-flex align-items-center">
-                            <img src="./assets/img/dog_shower.jpg" alt="Imagem de cachorro tomando banho" class="rounded-3">
-                            <p class="item-description m-0 mx-3">Banho cachorro porte grande</p>
-                        </td>
-                        <td class="align-middle">R$50,00</td>
-                        <td class="align-middle"></td>
-                        <td class="align-middle">
-                            <a href="" class="item-link">Remover</a>
-                        </td>
-                    </tr>
-                    <tr class="cart-item">
-                        <td class="d-flex align-items-center">
-                            <img src="./assets/img/dog_grommig.jpg" alt="Imagem de cachorro sendo tosado" class="rounded-3">
-                            <p class="item-description m-0 mx-3">Tosa cachorro porte pequeno</p>
-                        </td>
-                        <td class="align-middle">R$75,00</td>
-                        <td class="align-middle"></td>
-                        <td class="align-middle">
-                            <a href="" class="item-link">Remover</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="total-label text-end pe-4 py-2 m-0">Valor total dos serviços: <span class="text-success fw-bold">R$125,00</span></p>
-            <p class="cart-total text-end pe-4 py-1 m-0 fw-bold fs-5">Total Geral: <span class="text-success fw-bold fs-5">R$306,70</span></p>
+            <div style="display: inline-block; max-height: 320px; overflow-y: auto;">
+                <table style="color: var(--gray);" class="table">
+                    <!-- Header da tabela -->
+                    <thead>
+                        <tr>
+                            <th class="col-6">Serviço</th>
+                            <th class="col-2">Preço</th>
+                            <th class="col-2"></th>
+                            <th class="col-2"></th>
+                        </tr>
+                    </thead>
+                    <!-- Body da tabela -->
+                    <tbody id="serviceTable">
+                    </tbody>
+                </table>
+            </div>
+            <p class="total-label text-end pe-4 py-2 m-0">Valor total dos serviços: <span id="totalServices" class="text-success fw-bold">R$125,00</span></p>
+            <p class="cart-total text-end pe-4 py-1 m-0 fw-bold fs-5">Total Geral: <span id="totalCart" class="text-success fw-bold fs-5">R$306,70</span></p>
         </div>
     </main>
 

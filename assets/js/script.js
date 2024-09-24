@@ -1,4 +1,5 @@
 let cart = [];
+let pedido = [];
 
 // Funcao para voltar para pagina anterior
 function voltarPagina() {
@@ -6,20 +7,31 @@ function voltarPagina() {
 }
 
 // Funcao para adicionar item ao carrinho
-function addCartItem(id) {
+function addCartItem(id = null, petId = null, service = null) {
     // Verificar se ja existe algo no carrinho
     if (localStorage.cart){
         cart = JSON.parse(localStorage.getItem('cart'));
     }
 
-    // Verifica se o item ja esta no carrinho
-    cartItem = cart.find(item => item.id === id);
+    if (id) {
+        // Verifica se o item ja esta no carrinho
+        let cartItem = cart.find(item => item.id === id);
 
-    // Se ja estiver acrescenta mais 1 na quantidade, senao adiciona ao carrinho
-    if (cartItem) {
-        cartItem.quantidade++;
+        // Se ja estiver acrescenta mais 1 na quantidade, senao adiciona ao carrinho
+        if (cartItem) {
+            cartItem.quantidade++;
+        } else {
+            cart.push({ id: id, quantidade: 1 });
+        }
     } else {
-        cart.push({ id: id, quantidade: 1 });
+        // Verifica se o item ja esta no carrinho
+        let cartItem = cart.find(item => item.petId === petId && item.service === service);
+
+        // Se nao estiver, adiciona no carrinho
+        if (!cartItem) {
+            let price = service === 'Banho' ? 50 : 75;
+            cart.push({petId: petId, service: service, price: price})
+        }
     }
 
     // Atualiza o carrinho
@@ -27,15 +39,51 @@ function addCartItem(id) {
 }
 
 // Funcao para remover um item do carrinho
-function removeCartItem(id) {
+function removeCartItem(id = null, petId = null, service = null) {
     // Obtem o carrinho do localStorage
     let cart = JSON.parse(localStorage.getItem('cart'));
   
     // Filtra para eliminar o elemento que deseja remover do carrinho
-    cart = cart.filter(item => item.id !== id);
+    if (id) {
+        cart = cart.filter(item => item.id !== id);
+    } else {
+        cart = cart.filter(item => item.petId !== petId || item.service !== service);
+    }
   
     // Atualiza para o novo carrinho sem o item
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Funcao para adicionar item diretamente ao pedido
+function addItem(id = null, petId = null, service = null) {
+    if (id) {
+        pedido.push({ id: id, quantidade: 1 });
+    } else {
+        let price = service === 'Banho' ? 50 : 75;
+        pedido.push({petId: petId, service: service, price: price})
+    }
+}
+
+// Function que fecha pedido e redireciona
+const fechaPedido = () => {
+    localStorage.setItem('pedido', JSON.stringify(pedido));
+    window.location.href = "pedido.html";
+}
+
+// Adiciona item unico em pedido e vai para fechamento
+const requestItem = (id = null, petId = null, service = null) => {
+    pedido = [];
+    addItem(id, petId, service);
+    fechaPedido();
+}
+
+// Adiciona servicos marcados e redireciona para fechar pedido
+const requestServices = (services) => {
+    pedido = [];
+    for (item of services) {
+        addItem(null, item.petId, item.service);
+    }
+    fechaPedido();
 }
 
 // Executa ao carregar pagina
@@ -49,7 +97,6 @@ $(document).ready(function() {
         const urlParams = new URLSearchParams(window.location.search);
         // Verifica se esta logado
         const logged = urlParams.get('logged');
-        console.log(logged);
 
         // Se estiver logado, mostra navbar logado
         if (logged === 'true') {

@@ -1,4 +1,5 @@
 let interval = ''
+let services = []
 
 // Passa slide de produto
 function nextSlide() {
@@ -34,6 +35,9 @@ const generatePetCards = (data, service) => {
         // Input checkbox
         const check = document.createElement('input');
         check.type = 'checkbox';
+        check.onchange = () => {
+            controlService(pet.id, service);
+        }
         check.name = 'serviceCheck';
         check.classList.add('m-4');
         col1.appendChild(check);
@@ -72,7 +76,7 @@ const generatePetCards = (data, service) => {
         col3.innerHTML += `
             <div class="card-body">
                 <p class="card-text fw-semibold">Valor: <span class="text-success">R$50,00</span></p>
-                <button type="button" class="btn btn-primary">Agendar ${service}</button>
+                <button type="button" onclick="requestItem(null, ${pet.id}, '${service}')" class="btn btn-primary">Agendar ${service}</button>
             </div>
         `;
         // Adiciona terceira coluna
@@ -136,7 +140,7 @@ const createProductCard = (productData) => {
     // Cria as acoes do card
     const cardActions = document.createElement('div');
     cardActions.classList.add('card-buttons', 'd-flex', 'gap-2', 'justify-content-end');
-    const btnBuy = '<button type="button" class="btn btn-success rounded-3">Comprar</button>';
+    const btnBuy = `<button type="button" onclick="requestItem(${productData.id})" class="btn btn-success rounded-3">Comprar</button>`;
     const btnCart = `<button type="button" onclick="addCartItem(${productData.id})" class="btn btn-outline-success rounded-3"><i class="fa-solid fa-cart-shopping"></i></button>`;
     // Adiciona os botoes de acoes
     cardActions.innerHTML += (btnBuy);
@@ -224,6 +228,34 @@ const showHideCardDescription = (btn) => {
     cardTextHidden.style.display = cardTextHidden.style.display === 'none' ? 'block' : 'none';
 };
 
+// Funcao para controlar servicos marcados
+function controlService(petId, service) {
+    // Verificar se ja existe algo no carrinho
+    if (localStorage.services){
+        services = JSON.parse(localStorage.getItem('services'));
+    }
+
+    // Verifica se o servico esta marcado
+    let serviceItem = services.find(item => item.petId === petId && item.service === service);
+
+    // Se ja estiver remove, senao adiciona nos servicos marcados
+    if (serviceItem) {
+        services = services.filter(item => item.petId !== petId && item.service !== service);
+    } else {
+        services.push({ petId: petId, service: service });
+    }
+
+    // Atualiza os servicos marcados
+    localStorage.setItem('services', JSON.stringify(services));
+}
+
+// Adiciona servicos selecionados ao carrinho
+const addServices = () => {
+    for (let item of services) {
+        addCartItem(null, item.petId, item.service);
+    }
+}
+
 // Executa ao carregar pagina
 $(document).ready(function() {
     // Pega os parametros da url
@@ -247,6 +279,20 @@ $(document).ready(function() {
 
         // Chama a funcao que adiciona as linhas dos pets
         generatePetCards(petsData, service);
+
+        // Limpa os servicos marcados
+        services = [];
+        localStorage.setItem('services', services);
+
+        let cartButton = document.getElementById('cartButton');
+        cartButton.onclick = () => {
+            addServices(service);
+        }
+
+        let contractButton = document.getElementById('contractButton');
+        contractButton.onclick = () => {
+            requestServices(services);
+        }
     });
 
     activeInterval();
