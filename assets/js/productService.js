@@ -76,7 +76,7 @@ const generatePetCards = (data, service) => {
         col3.innerHTML += `
             <div class="card-body">
                 <p class="card-text fw-semibold">Valor: <span class="text-success">R$50,00</span></p>
-                <button type="button" class="btn btn-primary">Agendar ${service}</button>
+                <button type="button" onclick="requestItem(null, ${pet.id}, '${service}')" class="btn btn-primary">Agendar ${service}</button>
             </div>
         `;
         // Adiciona terceira coluna
@@ -140,7 +140,7 @@ const createProductCard = (productData) => {
     // Cria as acoes do card
     const cardActions = document.createElement('div');
     cardActions.classList.add('card-buttons', 'd-flex', 'gap-2', 'justify-content-end');
-    const btnBuy = '<button type="button" class="btn btn-success rounded-3">Comprar</button>';
+    const btnBuy = `<button type="button" onclick="requestItem(${productData.id})" class="btn btn-success rounded-3">Comprar</button>`;
     const btnCart = `<button type="button" onclick="addCartItem(${productData.id})" class="btn btn-outline-success rounded-3"><i class="fa-solid fa-cart-shopping"></i></button>`;
     // Adiciona os botoes de acoes
     cardActions.innerHTML += (btnBuy);
@@ -247,7 +247,6 @@ function controlService(petId, service) {
 
     // Atualiza os servicos marcados
     localStorage.setItem('services', JSON.stringify(services));
-    console.log(services);
 }
 
 // Adiciona servicos selecionados ao carrinho
@@ -288,12 +287,11 @@ $(document).ready(function() {
         let cartButton = document.getElementById('cartButton');
         cartButton.onclick = () => {
             addServices(service);
-            console.log(cart);
         }
 
         let contractButton = document.getElementById('contractButton');
         contractButton.onclick = () => {
-            addServices(service);
+            requestServices(services);
         }
     });
 

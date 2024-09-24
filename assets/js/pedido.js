@@ -19,12 +19,19 @@ $(document).ready(function() {
     requestItems.innerHTML = '';
     let price = 0;
 
-    if (localStorage.cart){
-        cart = JSON.parse(localStorage.getItem('cart'));
+    const urlParams = new URLSearchParams(window.location.search);
+    // Verifica se usa o carrinho
+    const carrinho = urlParams.get('carrinho');
+    let pedido;
+
+    if (carrinho && localStorage.cart) {
+        pedido = JSON.parse(localStorage.getItem('cart'));
+    } else {
+        pedido = JSON.parse(localStorage.getItem('pedido'));
     }
     
     // Adiciona os itens ao resumo do pedido
-    for (item of cart) {
+    for (item of pedido) {
         let li = document.createElement('li');
         if (item.id) {
             // Busca o produto

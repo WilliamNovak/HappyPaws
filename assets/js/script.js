@@ -1,4 +1,5 @@
 let cart = [];
+let pedido = [];
 
 // Funcao para voltar para pagina anterior
 function voltarPagina() {
@@ -51,6 +52,38 @@ function removeCartItem(id = null, petId = null, service = null) {
   
     // Atualiza para o novo carrinho sem o item
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Funcao para adicionar item diretamente ao pedido
+function addItem(id = null, petId = null, service = null) {
+    if (id) {
+        pedido.push({ id: id, quantidade: 1 });
+    } else {
+        let price = service === 'Banho' ? 50 : 75;
+        pedido.push({petId: petId, service: service, price: price})
+    }
+}
+
+// Function que fecha pedido e redireciona
+const fechaPedido = () => {
+    localStorage.setItem('pedido', JSON.stringify(pedido));
+    window.location.href = "pedido.html";
+}
+
+// Adiciona item unico em pedido e vai para fechamento
+const requestItem = (id = null, petId = null, service = null) => {
+    pedido = [];
+    addItem(id, petId, service);
+    fechaPedido();
+}
+
+// Adiciona servicos marcados e redireciona para fechar pedido
+const requestServices = (services) => {
+    pedido = [];
+    for (item of services) {
+        addItem(null, item.petId, item.service);
+    }
+    fechaPedido();
 }
 
 // Executa ao carregar pagina
